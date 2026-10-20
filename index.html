@@ -1,0 +1,5639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2027 Spelling Bee Practice — Official 400-Word Competition List</title>
+  <style>
+    :root {
+      --bg-grad-start: #fffbeb;
+      --bg-grad-end: #fef3c7;
+      --card-bg: #ffffff;
+      --honey-primary: #d97706;
+      --honey-dark: #b45309;
+      --honey-light: #fef3c7;
+      --honey-border: #fde68a;
+      --accent-amber: #f59e0b;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --success-bg: #ecfdf5;
+      --success-border: #6ee7b7;
+      --success-text: #065f46;
+      --warn-bg: #fffbeb;
+      --warn-border: #fcd34d;
+      --warn-text: #92400e;
+      --error-bg: #fef2f2;
+      --error-border: #fca5a5;
+      --error-text: #991b1b;
+      --shadow-lg: 0 12px 32px -4px rgba(180, 83, 9, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.06);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(145deg, var(--bg-grad-start) 0%, var(--bg-grad-end) 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+    }
+
+    /* Header */
+    header {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--honey-border);
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+
+    .header-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .bee-logo {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #fbbf24, #d97706);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      box-shadow: 0 4px 10px rgba(217, 119, 6, 0.25);
+      flex-shrink: 0;
+    }
+
+    .brand-title h1 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-title p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Buttons */
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      transition: all 0.16s ease;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 9px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: #ffffff;
+      color: #334155;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-secondary:hover {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-honey {
+      background: var(--honey-light);
+      color: var(--honey-dark);
+      border: 1.5px solid var(--honey-border);
+    }
+
+    .btn-honey:hover {
+      background: #fde68a;
+    }
+
+    .btn-success {
+      background: #059669;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+    }
+
+    .btn-success:hover {
+      background: #047857;
+      transform: translateY(-1px);
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      max-width: 980px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 24px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Stats & Filter Bar */
+    .top-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--honey-border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      box-shadow: 0 2px 6px rgba(180, 83, 9, 0.05);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .stat-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    /* Controls Strip */
+    .settings-strip {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid var(--honey-border);
+      border-radius: var(--radius-md);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.86rem;
+    }
+
+    .settings-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .settings-group label {
+      font-weight: 600;
+      color: #475569;
+    }
+
+    select {
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      font-size: 0.85rem;
+      color: #1e293b;
+      font-weight: 500;
+    }
+
+    /* Practice Arena Card */
+    .practice-card {
+      background: var(--card-bg);
+      border: 2px solid var(--honey-border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      position: relative;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 14px;
+    }
+
+    .word-badges {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-num {
+      background: var(--honey-light);
+      color: var(--honey-dark);
+      border: 1px solid var(--honey-border);
+    }
+
+    .badge-pos {
+      background: #e0f2fe;
+      color: #0369a1;
+      text-transform: uppercase;
+    }
+
+    .badge-note {
+      background: #f3e8ff;
+      color: #6b21a8;
+    }
+
+    .tries-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #475569;
+    }
+
+    .try-dots {
+      display: flex;
+      gap: 5px;
+    }
+
+    .try-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      background: #fef3c7;
+      border: 1.5px solid #f59e0b;
+      transition: all 0.2s ease;
+    }
+
+    .try-dot.used {
+      background: #fee2e2;
+      border-color: #ef4444;
+      opacity: 0.6;
+      filter: grayscale(0.6);
+    }
+
+    /* Audio Controls & Definition Box */
+    .prompt-section {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: #fffdf9;
+      border: 1.5px solid #fde68a;
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .audio-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn-speak-main {
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 12px;
+    }
+
+    .speaking-pulse {
+      animation: pulseRing 1.2s infinite;
+    }
+
+    @keyframes pulseRing {
+      0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.55); }
+      70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+    }
+
+    .definition-box {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .definition-label {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--honey-dark);
+      font-weight: 700;
+    }
+
+    .definition-text {
+      font-size: 1.15rem;
+      color: #1e293b;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .hint-box {
+      font-size: 0.9rem;
+      color: #7c2d12;
+      background: #ffedd5;
+      border: 1px dashed #fb923c;
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: none;
+      font-weight: 600;
+    }
+
+    /* Input Form */
+    .input-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .spelling-input-wrap {
+      flex: 1;
+      min-width: 240px;
+      position: relative;
+    }
+
+    .spelling-input {
+      width: 100%;
+      padding: 14px 18px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border-radius: 12px;
+      border: 2px solid #cbd5e1;
+      background: #ffffff;
+      color: #0f172a;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .spelling-input:focus {
+      border-color: var(--honey-primary);
+      box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.18);
+    }
+
+    .spelling-input:disabled {
+      background: #f8fafc;
+      color: #64748b;
+    }
+
+    .helper-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .char-pills {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .char-btn {
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #1e293b;
+    }
+
+    .char-btn:hover {
+      background: #e2e8f0;
+    }
+
+    .secondary-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* Feedback Banner */
+    .feedback-banner {
+      border-radius: 14px;
+      padding: 18px 20px;
+      display: none;
+      flex-direction: column;
+      gap: 12px;
+      animation: fadeIn 0.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .feedback-banner.correct {
+      display: flex;
+      background: var(--success-bg);
+      border: 1.5px solid var(--success-border);
+      color: var(--success-text);
+    }
+
+    .feedback-banner.retry {
+      display: flex;
+      background: var(--warn-bg);
+      border: 1.5px solid var(--warn-border);
+      color: var(--warn-text);
+    }
+
+    .feedback-banner.failed {
+      display: flex;
+      background: var(--error-bg);
+      border: 1.5px solid var(--error-border);
+      color: var(--error-text);
+    }
+
+    .feedback-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .feedback-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .answer-reveal-box {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 10px;
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .correct-word-letters {
+      font-size: 1.55rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      color: #0f172a;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      word-break: break-word;
+    }
+
+    .attempt-history {
+      font-size: 0.86rem;
+      color: #475569;
+    }
+
+    /* Word List Section / Modal */
+    .word-list-panel {
+      background: var(--card-bg);
+      border: 2px solid var(--honey-border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .word-list-panel.open {
+      display: flex;
+    }
+
+    .list-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 14px;
+    }
+
+    .list-header h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .list-filters {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .search-input {
+      flex: 1;
+      min-width: 220px;
+      padding: 9px 14px;
+      border-radius: 10px;
+      border: 1.5px solid #cbd5e1;
+      font-size: 0.92rem;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--honey-primary);
+    }
+
+    .word-table-container {
+      max-height: 540px;
+      overflow-y: auto;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+
+    thead {
+      background: #f8fafc;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      border-bottom: 1.5px solid #e2e8f0;
+    }
+
+    th, td {
+      padding: 11px 14px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: middle;
+    }
+
+    th {
+      font-weight: 700;
+      color: #475569;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    tr:hover td {
+      background: #fffbeb;
+    }
+
+    .td-num {
+      font-weight: 700;
+      color: var(--text-muted);
+      width: 60px;
+    }
+
+    .td-word {
+      font-weight: 800;
+      color: #0f172a;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+
+    .hide-spellings .td-word-text {
+      filter: blur(6px);
+      user-select: none;
+      transition: filter 0.15s ease;
+    }
+
+    .hide-spellings tr:hover .td-word-text {
+      filter: blur(0);
+    }
+
+    .td-pos {
+      white-space: nowrap;
+      width: 110px;
+    }
+
+    .td-actions {
+      white-space: nowrap;
+      width: 140px;
+      text-align: right;
+    }
+
+    .btn-sm {
+      padding: 5px 10px;
+      font-size: 0.8rem;
+      border-radius: 7px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: auto;
+      background: rgba(255, 255, 255, 0.85);
+      border-top: 1px solid var(--honey-border);
+      padding: 16px 20px;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .busuanzi-stats {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+
+    @media (max-width: 640px) {
+      .practice-card {
+        padding: 18px;
+      }
+      .spelling-input {
+        font-size: 1.1rem;
+        padding: 12px 14px;
+      }
+      .td-pos {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="bee-logo" aria-hidden="true">🐝</div>
+        <div class="brand-title">
+          <h1>2027 Spelling Bee Practice</h1>
+          <p>School Competition List (400 Words) • Standard American English</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button type="button" id="showListBtn" class="btn btn-honey">
+          📋 Show List (400 Words)
+        </button>
+        <button type="button" id="resetStatsBtn" class="btn btn-secondary" title="Reset session score">
+          🔄 Reset Score
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Session Statistics -->
+    <section class="top-bar" aria-label="Practice Statistics">
+      <div class="stat-card">
+        <span class="stat-label">Words Practiced</span>
+        <span class="stat-value" id="statPracticed">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Correct</span>
+        <span class="stat-value" id="statCorrect">0</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Current Streak</span>
+        <span class="stat-value" id="statStreak">0 🔥</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Accuracy</span>
+        <span class="stat-value" id="statAccuracy">—</span>
+      </div>
+    </section>
+
+    <!-- Voice & Range Controls -->
+    <section class="settings-strip" aria-label="Audio and Word Pool Settings">
+      <div class="settings-group">
+        <label for="rangeSelect">🎯 Word Pool:</label>
+        <select id="rangeSelect">
+          <option value="all">All 400 Words (#1–400)</option>
+          <option value="1-100">Words #1–100</option>
+          <option value="101-200">Words #101–200</option>
+          <option value="201-300">Words #201–300</option>
+          <option value="301-400">Words #301–400</option>
+          <option value="missed">Missed Words Only (0)</option>
+        </select>
+      </div>
+
+      <div class="settings-group">
+        <label for="voiceSelect">🇺🇸 US Voice:</label>
+        <select id="voiceSelect">
+          <option value="">Default American English (en-US)</option>
+        </select>
+        <label for="rateSelect">Speed:</label>
+        <select id="rateSelect">
+          <option value="0.85">0.85x (Clear)</option>
+          <option value="0.95" selected>0.95x (Natural)</option>
+          <option value="1.0">1.0x (Standard)</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Active Spelling Practice Card -->
+    <section class="practice-card" aria-label="Spelling Bee Practice Area">
+      <div class="card-header">
+        <div class="word-badges">
+          <span class="badge badge-num" id="wordNumBadge">Word #1 of 400</span>
+          <span class="badge badge-pos" id="wordPosBadge">noun</span>
+          <span class="badge badge-note" id="wordSpecialBadge" style="display:none;"></span>
+        </div>
+        <div class="tries-indicator">
+          <span id="triesText">3 tries remaining</span>
+          <div class="try-dots" id="tryDots" aria-hidden="true">
+            <span class="try-dot">🐝</span>
+            <span class="try-dot">🐝</span>
+            <span class="try-dot">🐝</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Audio & Definition -->
+      <div class="prompt-section">
+        <div class="audio-bar">
+          <button type="button" id="speakBothBtn" class="btn btn-primary btn-speak-main">
+            🔊 Pronounce Word &amp; Read Definition
+          </button>
+          <button type="button" id="speakWordBtn" class="btn btn-honey">
+            🗣️ Word Only
+          </button>
+          <button type="button" id="speakSlowBtn" class="btn btn-secondary">
+            🐢 Slow Word
+          </button>
+          <button type="button" id="speakDefBtn" class="btn btn-secondary">
+            📖 Definition Only
+          </button>
+        </div>
+
+        <div class="definition-box">
+          <span class="definition-label">Definition</span>
+          <p class="definition-text" id="wordDefinition">Loading definition...</p>
+        </div>
+
+        <div class="hint-box" id="hintBox"></div>
+      </div>
+
+      <!-- User Spelling Input -->
+      <form id="spellingForm" class="input-section" autocomplete="off" onsubmit="return false;">
+        <div class="input-row">
+          <div class="spelling-input-wrap">
+            <input
+              type="text"
+              id="spellingInput"
+              class="spelling-input"
+              placeholder="Type the spelling here..."
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+              aria-label="Type the spelling of the word"
+            />
+          </div>
+          <button type="submit" id="submitBtn" class="btn btn-primary" style="padding: 0 24px; font-size: 1rem;">
+            ✅ Check Spelling
+          </button>
+          <button type="button" id="nextWordBtn" class="btn btn-success" style="display:none; padding: 0 24px; font-size: 1rem;">
+            ⏭️ Next Word →
+          </button>
+        </div>
+
+        <div class="helper-bar">
+          <div class="char-pills">
+            <span>Insert special character:</span>
+            <button type="button" class="char-btn" data-char="ñ" title="Insert ñ">ñ</button>
+            <button type="button" class="char-btn" data-char="-" title="Insert hyphen">-</button>
+          </div>
+          <div class="secondary-actions">
+            <button type="button" id="hintBtn" class="btn btn-secondary btn-sm">
+              💡 Hint (Letters)
+            </button>
+            <button type="button" id="giveUpBtn" class="btn btn-secondary btn-sm">
+              👁️ Show Correct Answer
+            </button>
+            <button type="button" id="skipWordBtn" class="btn btn-secondary btn-sm">
+              🎲 Pick Another Word
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Feedback / Retry / Correct Answer Area -->
+      <div id="feedbackBanner" class="feedback-banner" role="status" aria-live="polite">
+        <div class="feedback-header">
+          <div class="feedback-title" id="feedbackTitle"></div>
+          <div id="feedbackActions"></div>
+        </div>
+        <div id="feedbackBody"></div>
+      </div>
+    </section>
+
+    <!-- Complete 400-Word List Panel (toggled by 'Show List' button) -->
+    <section id="wordListPanel" class="word-list-panel" aria-label="Complete 2027 Competition Word List">
+      <div class="list-header">
+        <div>
+          <h2>📚 Complete 2027 School Competition Word List (400 Words)</h2>
+          <p style="font-size: 0.84rem; color: var(--text-muted);">
+            Click <strong>🔊 Speak</strong> to hear any word &amp; definition, or <strong>🎯 Practice</strong> to spell that word.
+          </p>
+        </div>
+        <div style="display:flex; gap:8px; align-items:center;">
+          <label style="font-size: 0.85rem; font-weight: 600; display:flex; align-items:center; gap:5px; cursor:pointer;">
+            <input type="checkbox" id="blurWordsToggle" />
+            Blur Spellings (Self-Quiz)
+          </label>
+          <button type="button" id="closeListBtn" class="btn btn-secondary btn-sm">
+            ✖ Hide List
+          </button>
+        </div>
+      </div>
+
+      <div class="list-filters">
+        <input
+          type="search"
+          id="listSearchInput"
+          class="search-input"
+          placeholder="Search by word number (1-400), spelling, or definition..."
+        />
+        <span id="listCountLabel" style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">
+          Showing 400 of 400 words
+        </span>
+      </div>
+
+      <div class="word-table-container" id="wordTableWrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Spelling Word</th>
+              <th class="td-pos">Part of Speech</th>
+              <th>Definition</th>
+              <th class="td-actions">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="wordListTbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <strong>2027 School Competition List</strong> • 400 Official Spelling Bee Practice Words • Standalone HTML
+      </div>
+      <div class="busuanzi-stats">
+        <span id="busuanzi_container_page_pv" style="display:none">
+          Page views: / 本页访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        <span id="busuanzi_container_site_uv" style="display:none">
+          Total visitors: / 全站访客：<span id="busuanzi_value_site_uv"></span>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Complete 400 words from 2027_Word List only.pdf
+    const WORD_LIST = [
+  {
+    "id": 1,
+    "word": "wind",
+    "display": "wind",
+    "alt": [
+      "wind"
+    ],
+    "pos": "noun",
+    "def": "A natural movement or current of air blowing across the earth's surface."
+  },
+  {
+    "id": 2,
+    "word": "dirt",
+    "display": "dirt",
+    "alt": [
+      "dirt"
+    ],
+    "pos": "noun",
+    "def": "Loose earth, soil, or mud on the ground."
+  },
+  {
+    "id": 3,
+    "word": "good",
+    "display": "good",
+    "alt": [
+      "good"
+    ],
+    "pos": "adjective",
+    "def": "Of a favorable character, high quality, or pleasant nature."
+  },
+  {
+    "id": 4,
+    "word": "hurt",
+    "display": "hurt",
+    "alt": [
+      "hurt"
+    ],
+    "pos": "verb",
+    "def": "To cause physical pain, injury, or distress to someone or something."
+  },
+  {
+    "id": 5,
+    "word": "bunny",
+    "display": "bunny",
+    "alt": [
+      "bunny"
+    ],
+    "pos": "noun",
+    "def": "A small rabbit, especially a young one."
+  },
+  {
+    "id": 6,
+    "word": "steps",
+    "display": "steps",
+    "alt": [
+      "steps"
+    ],
+    "pos": "plural noun",
+    "def": "Movements made by lifting the foot and setting it down in a new position; or flat surfaces on a staircase."
+  },
+  {
+    "id": 7,
+    "word": "silly",
+    "display": "silly",
+    "alt": [
+      "silly"
+    ],
+    "pos": "adjective",
+    "def": "Playfully foolish, absurd, or lacking seriousness."
+  },
+  {
+    "id": 8,
+    "word": "path",
+    "display": "path",
+    "alt": [
+      "path"
+    ],
+    "pos": "noun",
+    "def": "A track or way made for people walking on foot."
+  },
+  {
+    "id": 9,
+    "word": "stars",
+    "display": "stars",
+    "alt": [
+      "stars"
+    ],
+    "pos": "plural noun",
+    "def": "Luminous celestial bodies visible in the night sky as points of light."
+  },
+  {
+    "id": 10,
+    "word": "fire",
+    "display": "fire",
+    "alt": [
+      "fire"
+    ],
+    "pos": "noun",
+    "def": "The phenomenon of combustion manifested in light, flame, and heat."
+  },
+  {
+    "id": 11,
+    "word": "hello",
+    "display": "hello",
+    "alt": [
+      "hello"
+    ],
+    "pos": "interjection",
+    "def": "An expression used as a greeting or to attract attention."
+  },
+  {
+    "id": 12,
+    "word": "late",
+    "display": "late",
+    "alt": [
+      "late"
+    ],
+    "pos": "adjective",
+    "def": "Coming, occurring, or arriving after the usual, expected, or proper time."
+  },
+  {
+    "id": 13,
+    "word": "shell",
+    "display": "shell",
+    "alt": [
+      "shell"
+    ],
+    "pos": "noun",
+    "def": "The hard outer covering of a mollusk, turtle, egg, or nut."
+  },
+  {
+    "id": 14,
+    "word": "wings",
+    "display": "wings",
+    "alt": [
+      "wings"
+    ],
+    "pos": "plural noun",
+    "def": "The paired forelimbs or appendages of a bird, bat, or insect used for flying."
+  },
+  {
+    "id": 15,
+    "word": "easy",
+    "display": "easy",
+    "alt": [
+      "easy"
+    ],
+    "pos": "adjective",
+    "def": "Requiring little effort; posing no great difficulty."
+  },
+  {
+    "id": 16,
+    "word": "house",
+    "display": "house",
+    "alt": [
+      "house"
+    ],
+    "pos": "noun",
+    "def": "A building that serves as living quarters for one or more families."
+  },
+  {
+    "id": 17,
+    "word": "shift",
+    "display": "shift",
+    "alt": [
+      "shift"
+    ],
+    "pos": "verb",
+    "def": "To move or transfer from one place, position, or direction to another."
+  },
+  {
+    "id": 18,
+    "word": "tusk",
+    "display": "tusk",
+    "alt": [
+      "tusk"
+    ],
+    "pos": "noun",
+    "def": "An elongated, greatly enlarged tooth that projects beyond the mouth, as in an elephant or walrus."
+  },
+  {
+    "id": 19,
+    "word": "seal",
+    "display": "seal",
+    "alt": [
+      "seal"
+    ],
+    "pos": "noun",
+    "def": "A sleek marine mammal with flippers that lives in cold seas and rests on shore."
+  },
+  {
+    "id": 20,
+    "word": "dive",
+    "display": "dive",
+    "alt": [
+      "dive"
+    ],
+    "pos": "verb",
+    "def": "To plunge headfirst into water or move swiftly downward."
+  },
+  {
+    "id": 21,
+    "word": "crack",
+    "display": "crack",
+    "alt": [
+      "crack"
+    ],
+    "pos": "verb",
+    "def": "To break without complete separation of the parts, or to make a sharp snapping sound."
+  },
+  {
+    "id": 22,
+    "word": "fine",
+    "display": "fine",
+    "alt": [
+      "fine"
+    ],
+    "pos": "adjective",
+    "def": "Superior in quality, skill, or appearance; or consisting of very small particles."
+  },
+  {
+    "id": 23,
+    "word": "apple",
+    "display": "apple",
+    "alt": [
+      "apple"
+    ],
+    "pos": "noun",
+    "def": "A round, crisp edible fruit with red, yellow, or green skin that grows on a deciduous tree."
+  },
+  {
+    "id": 24,
+    "word": "mossy",
+    "display": "mossy",
+    "alt": [
+      "mossy"
+    ],
+    "pos": "adjective",
+    "def": "Covered with or resembling soft, green, flowerless plants that grow in damp places."
+  },
+  {
+    "id": 25,
+    "word": "shine",
+    "display": "shine",
+    "alt": [
+      "shine"
+    ],
+    "pos": "verb",
+    "def": "To emit rays of light or glow brightly."
+  },
+  {
+    "id": 26,
+    "word": "beans",
+    "display": "beans",
+    "alt": [
+      "beans"
+    ],
+    "pos": "plural noun",
+    "def": "The edible seeds or pods of various leguminous plants used as food."
+  },
+  {
+    "id": 27,
+    "word": "spray",
+    "display": "spray",
+    "alt": [
+      "spray"
+    ],
+    "pos": "noun",
+    "def": "Liquid flying in fine droplets or mist, as from an atomizer or breaking waves."
+  },
+  {
+    "id": 28,
+    "word": "truth",
+    "display": "truth",
+    "alt": [
+      "truth"
+    ],
+    "pos": "noun",
+    "def": "The quality or state of being in accordance with fact or reality."
+  },
+  {
+    "id": 29,
+    "word": "rabbit",
+    "display": "rabbit",
+    "alt": [
+      "rabbit"
+    ],
+    "pos": "noun",
+    "def": "A burrowing, long-eared, short-tailed mammal noted for its rapid hopping movement."
+  },
+  {
+    "id": 30,
+    "word": "tallest",
+    "display": "tallest",
+    "alt": [
+      "tallest"
+    ],
+    "pos": "adjective",
+    "def": "Having the greatest height or stature of all."
+  },
+  {
+    "id": 31,
+    "word": "frozen",
+    "display": "frozen",
+    "alt": [
+      "frozen"
+    ],
+    "pos": "adjective",
+    "def": "Turned into ice or hardened by extreme cold."
+  },
+  {
+    "id": 32,
+    "word": "cliffs",
+    "display": "cliffs",
+    "alt": [
+      "cliffs"
+    ],
+    "pos": "plural noun",
+    "def": "Very steep, vertical, or overhanging faces of rock or earth."
+  },
+  {
+    "id": 33,
+    "word": "market",
+    "display": "market",
+    "alt": [
+      "market"
+    ],
+    "pos": "noun",
+    "def": "A public place or gathering where goods and provisions are bought and sold."
+  },
+  {
+    "id": 34,
+    "word": "crunch",
+    "display": "crunch",
+    "alt": [
+      "crunch"
+    ],
+    "pos": "verb",
+    "def": "To chew, grind, or press with a noisy crushing sound."
+  },
+  {
+    "id": 35,
+    "word": "beware",
+    "display": "beware",
+    "alt": [
+      "beware"
+    ],
+    "pos": "verb",
+    "def": "To be on one's guard or be cautious of potential danger."
+  },
+  {
+    "id": 36,
+    "word": "sweater",
+    "display": "sweater",
+    "alt": [
+      "sweater"
+    ],
+    "pos": "noun",
+    "def": "A knitted upper-body garment worn for warmth."
+  },
+  {
+    "id": 37,
+    "word": "wrong",
+    "display": "wrong",
+    "alt": [
+      "wrong"
+    ],
+    "pos": "adjective",
+    "def": "Not correct, accurate, or morally right."
+  },
+  {
+    "id": 38,
+    "word": "money",
+    "display": "money",
+    "alt": [
+      "money"
+    ],
+    "pos": "noun",
+    "def": "Coins and paper currency used as an official medium of exchange."
+  },
+  {
+    "id": 39,
+    "word": "darkness",
+    "display": "darkness",
+    "alt": [
+      "darkness"
+    ],
+    "pos": "noun",
+    "def": "The partial or total absence of light."
+  },
+  {
+    "id": 40,
+    "word": "sprout",
+    "display": "sprout",
+    "alt": [
+      "sprout"
+    ],
+    "pos": "verb",
+    "def": "To begin to grow and send out new shoots or buds."
+  },
+  {
+    "id": 41,
+    "word": "shadows",
+    "display": "shadows",
+    "alt": [
+      "shadows"
+    ],
+    "pos": "plural noun",
+    "def": "Dark shapes cast upon a surface when an object blocks rays of light."
+  },
+  {
+    "id": 42,
+    "word": "alive",
+    "display": "alive",
+    "alt": [
+      "alive"
+    ],
+    "pos": "adjective",
+    "def": "Having life; living and not dead or inanimate."
+  },
+  {
+    "id": 43,
+    "word": "friend",
+    "display": "friend",
+    "alt": [
+      "friend"
+    ],
+    "pos": "noun",
+    "def": "A person attached to another by mutual affection, trust, and esteem."
+  },
+  {
+    "id": 44,
+    "word": "return",
+    "display": "return",
+    "alt": [
+      "return"
+    ],
+    "pos": "verb",
+    "def": "To go or come back to a former place, state, or owner."
+  },
+  {
+    "id": 45,
+    "word": "swift",
+    "display": "swift",
+    "alt": [
+      "swift"
+    ],
+    "pos": "adjective",
+    "def": "Moving or capable of moving with great speed; fast."
+  },
+  {
+    "id": 46,
+    "word": "footprints",
+    "display": "footprints",
+    "alt": [
+      "footprints"
+    ],
+    "pos": "plural noun",
+    "def": "Impressions or marks left on a surface by a person's or animal's foot."
+  },
+  {
+    "id": 47,
+    "word": "thirsty",
+    "display": "thirsty",
+    "alt": [
+      "thirsty"
+    ],
+    "pos": "adjective",
+    "def": "Feeling a need or desire to drink liquid."
+  },
+  {
+    "id": 48,
+    "word": "gentle",
+    "display": "gentle",
+    "alt": [
+      "gentle"
+    ],
+    "pos": "adjective",
+    "def": "Mild, kind, and calm in temperament or behavior; free from harshness."
+  },
+  {
+    "id": 49,
+    "word": "voice",
+    "display": "voice",
+    "alt": [
+      "voice"
+    ],
+    "pos": "noun",
+    "def": "Sound produced by vertebrates by means of lungs and vocal cords, especially in speech or singing."
+  },
+  {
+    "id": 50,
+    "word": "pancake",
+    "display": "pancake",
+    "alt": [
+      "pancake"
+    ],
+    "pos": "noun",
+    "def": "A thin, flat cake made of batter and cooked on both sides on a hot griddle or skillet."
+  },
+  {
+    "id": 51,
+    "word": "lead",
+    "display": "lead",
+    "alt": [
+      "lead"
+    ],
+    "pos": "verb",
+    "def": "To guide on a way, especially by going in advance; or a heavy, malleable bluish-gray metal."
+  },
+  {
+    "id": 52,
+    "word": "sloth",
+    "display": "sloth",
+    "alt": [
+      "sloth"
+    ],
+    "pos": "noun",
+    "def": "A slow-moving arboreal mammal of tropical America that hangs upside down from tree branches."
+  },
+  {
+    "id": 53,
+    "word": "cloak",
+    "display": "cloak",
+    "alt": [
+      "cloak"
+    ],
+    "pos": "noun",
+    "def": "A loose outer garment worn over the shoulders without sleeves."
+  },
+  {
+    "id": 54,
+    "word": "whistle",
+    "display": "whistle",
+    "alt": [
+      "whistle"
+    ],
+    "pos": "verb",
+    "def": "To make a clear, high-pitched sound by forcing breath through pursed lips or teeth."
+  },
+  {
+    "id": 55,
+    "word": "indoors",
+    "display": "indoors",
+    "alt": [
+      "indoors"
+    ],
+    "pos": "adverb",
+    "def": "In or into a building or house rather than outside."
+  },
+  {
+    "id": 56,
+    "word": "relax",
+    "display": "relax",
+    "alt": [
+      "relax"
+    ],
+    "pos": "verb",
+    "def": "To become less tense, anxious, or rigid; to rest from work or effort."
+  },
+  {
+    "id": 57,
+    "word": "holiday",
+    "display": "holiday",
+    "alt": [
+      "holiday"
+    ],
+    "pos": "noun",
+    "def": "A day set aside by law or custom for celebration or suspension of normal work."
+  },
+  {
+    "id": 58,
+    "word": "stout",
+    "display": "stout",
+    "alt": [
+      "stout"
+    ],
+    "pos": "adjective",
+    "def": "Sturdy, thickset, and strong in body or structure; brave and resolute."
+  },
+  {
+    "id": 59,
+    "word": "entire",
+    "display": "entire",
+    "alt": [
+      "entire"
+    ],
+    "pos": "adjective",
+    "def": "With no part left out; whole and complete."
+  },
+  {
+    "id": 60,
+    "word": "guide",
+    "display": "guide",
+    "alt": [
+      "guide"
+    ],
+    "pos": "noun",
+    "def": "A person who leads or directs others on a journey, tour, or course of action."
+  },
+  {
+    "id": 61,
+    "word": "mustard",
+    "display": "mustard",
+    "alt": [
+      "mustard"
+    ],
+    "pos": "noun",
+    "def": "A pungent yellow condiment made from the ground seeds of a brassica plant."
+  },
+  {
+    "id": 62,
+    "word": "ginger",
+    "display": "ginger",
+    "alt": [
+      "ginger"
+    ],
+    "pos": "noun",
+    "def": "A pungent, aromatic rhizome used as a spice in cooking, baking, and beverages."
+  },
+  {
+    "id": 63,
+    "word": "medium",
+    "display": "medium",
+    "alt": [
+      "medium"
+    ],
+    "pos": "adjective",
+    "def": "Intermediate in amount, quality, position, or degree; halfway between extremes."
+  },
+  {
+    "id": 64,
+    "word": "hiking",
+    "display": "hiking",
+    "alt": [
+      "hiking"
+    ],
+    "pos": "noun",
+    "def": "The activity of going for long walks in the countryside or wilderness for pleasure and exercise."
+  },
+  {
+    "id": 65,
+    "word": "afraid",
+    "display": "afraid",
+    "alt": [
+      "afraid"
+    ],
+    "pos": "adjective",
+    "def": "Filled with fear, apprehension, or worry."
+  },
+  {
+    "id": 66,
+    "word": "result",
+    "display": "result",
+    "alt": [
+      "result"
+    ],
+    "pos": "noun",
+    "def": "Something that happens as a consequence, outcome, or effect of an action."
+  },
+  {
+    "id": 67,
+    "word": "source",
+    "display": "source",
+    "alt": [
+      "source"
+    ],
+    "pos": "noun",
+    "def": "A point of origin from which a stream flows or from which information or supplies are obtained."
+  },
+  {
+    "id": 68,
+    "word": "tangy",
+    "display": "tangy",
+    "alt": [
+      "tangy"
+    ],
+    "pos": "adjective",
+    "def": "Having a sharp, zestful, pleasantly tart flavor or smell."
+  },
+  {
+    "id": 69,
+    "word": "shivering",
+    "display": "shivering",
+    "alt": [
+      "shivering"
+    ],
+    "pos": "verb",
+    "def": "Trembling or shaking slightly, especially as a result of being cold or frightened."
+  },
+  {
+    "id": 70,
+    "word": "grumpily",
+    "display": "grumpily",
+    "alt": [
+      "grumpily"
+    ],
+    "pos": "adverb",
+    "def": "In a bad-tempered, irritable, or surly manner."
+  },
+  {
+    "id": 71,
+    "word": "cottage",
+    "display": "cottage",
+    "alt": [
+      "cottage"
+    ],
+    "pos": "noun",
+    "def": "A small, cozy house, typically one located in the country or at a vacation spot."
+  },
+  {
+    "id": 72,
+    "word": "seventy",
+    "display": "seventy",
+    "alt": [
+      "seventy"
+    ],
+    "pos": "noun",
+    "def": "The cardinal number equal to seven times ten."
+  },
+  {
+    "id": 73,
+    "word": "distance",
+    "display": "distance",
+    "alt": [
+      "distance"
+    ],
+    "pos": "noun",
+    "def": "The amount of space between two points, places, or objects."
+  },
+  {
+    "id": 74,
+    "word": "soared",
+    "display": "soared",
+    "alt": [
+      "soared"
+    ],
+    "pos": "verb",
+    "def": "Flew or rose high into the air, gliding with little apparent effort."
+  },
+  {
+    "id": 75,
+    "word": "bamboo",
+    "display": "bamboo",
+    "alt": [
+      "bamboo"
+    ],
+    "pos": "noun",
+    "def": "A tall, fast-growing tropical grass with hollow, jointed, woody stems."
+  },
+  {
+    "id": 76,
+    "word": "cuddle",
+    "display": "cuddle",
+    "alt": [
+      "cuddle"
+    ],
+    "pos": "verb",
+    "def": "To hold close in one's arms as a way of showing warmth or affection."
+  },
+  {
+    "id": 77,
+    "word": "tiptoed",
+    "display": "tiptoed",
+    "alt": [
+      "tiptoed"
+    ],
+    "pos": "verb",
+    "def": "Walked quietly and cautiously on the balls and toes of the feet with heels raised."
+  },
+  {
+    "id": 78,
+    "word": "basement",
+    "display": "basement",
+    "alt": [
+      "basement"
+    ],
+    "pos": "noun",
+    "def": "The floor or story of a building that is partly or entirely below ground level."
+  },
+  {
+    "id": 79,
+    "word": "wetlands",
+    "display": "wetlands",
+    "alt": [
+      "wetlands"
+    ],
+    "pos": "plural noun",
+    "def": "Land areas such as marshes, swamps, or bogs that are saturated with water."
+  },
+  {
+    "id": 80,
+    "word": "butterflies",
+    "display": "butterflies",
+    "alt": [
+      "butterflies"
+    ],
+    "pos": "plural noun",
+    "def": "Day-flying insects with slender bodies and four broad, colorful wings."
+  },
+  {
+    "id": 81,
+    "word": "property",
+    "display": "property",
+    "alt": [
+      "property"
+    ],
+    "pos": "noun",
+    "def": "Something owned, such as land, real estate, or personal possessions; or an essential attribute."
+  },
+  {
+    "id": 82,
+    "word": "sniffling",
+    "display": "sniffling",
+    "alt": [
+      "sniffling"
+    ],
+    "pos": "verb",
+    "def": "Drawing air audibly up the nose, as when crying or suffering from a cold."
+  },
+  {
+    "id": 83,
+    "word": "tractor",
+    "display": "tractor",
+    "alt": [
+      "tractor"
+    ],
+    "pos": "noun",
+    "def": "A powerful motor vehicle with large rear wheels used on farms for hauling equipment and plows."
+  },
+  {
+    "id": 84,
+    "word": "awning",
+    "display": "awning",
+    "alt": [
+      "awning"
+    ],
+    "pos": "noun",
+    "def": "A roof-like cover of canvas or other material extending over a window, door, or deck to provide shelter from the sun."
+  },
+  {
+    "id": 85,
+    "word": "relief",
+    "display": "relief",
+    "alt": [
+      "relief"
+    ],
+    "pos": "noun",
+    "def": "A feeling of reassurance and relaxation following release from anxiety, pain, or distress."
+  },
+  {
+    "id": 86,
+    "word": "boycotting",
+    "display": "boycotting",
+    "alt": [
+      "boycotting"
+    ],
+    "pos": "verb",
+    "def": "Refusing to buy from, use, or participate in something as a concerted protest."
+  },
+  {
+    "id": 87,
+    "word": "elite",
+    "display": "elite",
+    "alt": [
+      "elite"
+    ],
+    "pos": "noun",
+    "def": "A select group that is superior in terms of ability, achievement, or status to the rest of a group."
+  },
+  {
+    "id": 88,
+    "word": "proclaim",
+    "display": "proclaim",
+    "alt": [
+      "proclaim"
+    ],
+    "pos": "verb",
+    "def": "To announce officially, publicly, and emphatically."
+  },
+  {
+    "id": 89,
+    "word": "custody",
+    "display": "custody",
+    "alt": [
+      "custody"
+    ],
+    "pos": "noun",
+    "def": "Protective care, guardianship, or legal safekeeping of a person or thing."
+  },
+  {
+    "id": 90,
+    "word": "warrior",
+    "display": "warrior",
+    "alt": [
+      "warrior"
+    ],
+    "pos": "noun",
+    "def": "A person engaged or experienced in battle and warfare."
+  },
+  {
+    "id": 91,
+    "word": "fierce",
+    "display": "fierce",
+    "alt": [
+      "fierce"
+    ],
+    "pos": "adjective",
+    "def": "Displaying an intense, ferocious, or menacing aggressiveness."
+  },
+  {
+    "id": 92,
+    "word": "salary",
+    "display": "salary",
+    "alt": [
+      "salary"
+    ],
+    "pos": "noun",
+    "def": "Fixed regular payment made by an employer to an employee for professional work."
+  },
+  {
+    "id": 93,
+    "word": "hurdler",
+    "display": "hurdler",
+    "alt": [
+      "hurdler"
+    ],
+    "pos": "noun",
+    "def": "An athlete who runs in track races that require leaping over a series of upright barriers."
+  },
+  {
+    "id": 94,
+    "word": "jovial",
+    "display": "jovial",
+    "alt": [
+      "jovial"
+    ],
+    "pos": "adjective",
+    "def": "Marked by hearty conviviality, good humor, and cheerful spirits."
+  },
+  {
+    "id": 95,
+    "word": "December",
+    "display": "December",
+    "alt": [
+      "December"
+    ],
+    "pos": "proper noun",
+    "def": "The twelfth and final month of the year in the Gregorian calendar."
+  },
+  {
+    "id": 96,
+    "word": "dictionary",
+    "display": "dictionary",
+    "alt": [
+      "dictionary"
+    ],
+    "pos": "noun",
+    "def": "A reference book or resource containing an alphabetical list of words with their meanings and pronunciations."
+  },
+  {
+    "id": 97,
+    "word": "reinstate",
+    "display": "reinstate",
+    "alt": [
+      "reinstate"
+    ],
+    "pos": "verb",
+    "def": "To restore someone or something to a former position, privilege, or condition."
+  },
+  {
+    "id": 98,
+    "word": "versus",
+    "display": "versus",
+    "alt": [
+      "versus"
+    ],
+    "pos": "preposition",
+    "def": "Against, or in contrast to, especially in sports contests or legal proceedings."
+  },
+  {
+    "id": 99,
+    "word": "opposite",
+    "display": "opposite",
+    "alt": [
+      "opposite"
+    ],
+    "pos": "adjective",
+    "def": "Situated directly across from something else, or completely different in nature or direction."
+  },
+  {
+    "id": 100,
+    "word": "marlin",
+    "display": "marlin",
+    "alt": [
+      "marlin"
+    ],
+    "pos": "noun",
+    "def": "A large oceanic game fish having a spear-like elongated upper jaw and a long dorsal fin."
+  },
+  {
+    "id": 101,
+    "word": "compliment",
+    "display": "compliment",
+    "alt": [
+      "compliment"
+    ],
+    "pos": "noun",
+    "def": "A polite expression of praise, admiration, or commendation."
+  },
+  {
+    "id": 102,
+    "word": "incident",
+    "display": "incident",
+    "alt": [
+      "incident"
+    ],
+    "pos": "noun",
+    "def": "An individual occurrence, event, or noteworthy episode."
+  },
+  {
+    "id": 103,
+    "word": "investment",
+    "display": "investment",
+    "alt": [
+      "investment"
+    ],
+    "pos": "noun",
+    "def": "The commitment of funds or capital to an asset or enterprise with the expectation of earning a return."
+  },
+  {
+    "id": 104,
+    "word": "cutlery",
+    "display": "cutlery",
+    "alt": [
+      "cutlery"
+    ],
+    "pos": "noun",
+    "def": "Edged utensils and implements such as knives, forks, and spoons used for cutting and eating food."
+  },
+  {
+    "id": 105,
+    "word": "fundraiser",
+    "display": "fundraiser",
+    "alt": [
+      "fundraiser"
+    ],
+    "pos": "noun",
+    "def": "An event or campaign organized for the purpose of collecting financial contributions for a cause."
+  },
+  {
+    "id": 106,
+    "word": "bellowed",
+    "display": "bellowed",
+    "alt": [
+      "bellowed"
+    ],
+    "pos": "verb",
+    "def": "Shouted or roared in a deep, loud, resonant voice."
+  },
+  {
+    "id": 107,
+    "word": "quail",
+    "display": "quail",
+    "alt": [
+      "quail"
+    ],
+    "pos": "noun",
+    "def": "A small, plump ground-dwelling game bird; or to shrink back in fear."
+  },
+  {
+    "id": 108,
+    "word": "disappointment",
+    "display": "disappointment",
+    "alt": [
+      "disappointment"
+    ],
+    "pos": "noun",
+    "def": "Sadness or displeasure caused by the nonfulfillment of one's hopes or expectations."
+  },
+  {
+    "id": 109,
+    "word": "pamphlet",
+    "display": "pamphlet",
+    "alt": [
+      "pamphlet"
+    ],
+    "pos": "noun",
+    "def": "A small, unbound booklet or leaflet containing information on a single subject."
+  },
+  {
+    "id": 110,
+    "word": "suggested",
+    "display": "suggested",
+    "alt": [
+      "suggested"
+    ],
+    "pos": "verb",
+    "def": "Put forward an idea, plan, or possibility for consideration."
+  },
+  {
+    "id": 111,
+    "word": "desperate",
+    "display": "desperate",
+    "alt": [
+      "desperate"
+    ],
+    "pos": "adjective",
+    "def": "Feeling or showing a hopeless sense that a situation is so bad as to be almost impossible to deal with."
+  },
+  {
+    "id": 112,
+    "word": "interruption",
+    "display": "interruption",
+    "alt": [
+      "interruption"
+    ],
+    "pos": "noun",
+    "def": "An act of breaking the continuity of a speech, action, or process."
+  },
+  {
+    "id": 113,
+    "word": "piñata",
+    "display": "piñata",
+    "alt": [
+      "piñata"
+    ],
+    "pos": "noun",
+    "def": "A decorated container filled with candy and toys, suspended from above to be broken open by blindfolded celebrants."
+  },
+  {
+    "id": 114,
+    "word": "stragglers",
+    "display": "stragglers",
+    "alt": [
+      "stragglers"
+    ],
+    "pos": "plural noun",
+    "def": "People or animals that lag behind or wander away from the main group."
+  },
+  {
+    "id": 115,
+    "word": "ridiculous",
+    "display": "ridiculous",
+    "alt": [
+      "ridiculous"
+    ],
+    "pos": "adjective",
+    "def": "Arousing or deserving mockery and derision; absurd or preposterous."
+  },
+  {
+    "id": 116,
+    "word": "exploratory",
+    "display": "exploratory",
+    "alt": [
+      "exploratory"
+    ],
+    "pos": "adjective",
+    "def": "Done or created for the purpose of investigating, discovering, or examining something unknown."
+  },
+  {
+    "id": 117,
+    "word": "bratwurst",
+    "display": "bratwurst",
+    "alt": [
+      "bratwurst"
+    ],
+    "pos": "noun",
+    "def": "A German sausage made of seasoned pork or veal, typically grilled or pan-fried."
+  },
+  {
+    "id": 118,
+    "word": "integrity",
+    "display": "integrity",
+    "alt": [
+      "integrity"
+    ],
+    "pos": "noun",
+    "def": "Steadfast adherence to a strict moral or ethical code; wholeness and soundness."
+  },
+  {
+    "id": 119,
+    "word": "rebuttal",
+    "display": "rebuttal",
+    "alt": [
+      "rebuttal"
+    ],
+    "pos": "noun",
+    "def": "An argument, statement, or evidence presented to contradict or refute an opposing claim."
+  },
+  {
+    "id": 120,
+    "word": "solidarity",
+    "display": "solidarity",
+    "alt": [
+      "solidarity"
+    ],
+    "pos": "noun",
+    "def": "Unity of feeling, mutual support, or common fellowship within a group with shared interests."
+  },
+  {
+    "id": 121,
+    "word": "sputnik",
+    "display": "sputnik",
+    "alt": [
+      "sputnik"
+    ],
+    "pos": "noun",
+    "def": "An artificial Earth-orbiting satellite, especially any of those launched by the Soviet Union beginning in 1957."
+  },
+  {
+    "id": 122,
+    "word": "segregation",
+    "display": "segregation",
+    "alt": [
+      "segregation"
+    ],
+    "pos": "noun",
+    "def": "The action or state of setting someone or something apart from others."
+  },
+  {
+    "id": 123,
+    "word": "civilian",
+    "display": "civilian",
+    "alt": [
+      "civilian"
+    ],
+    "pos": "noun",
+    "def": "A person who is not on active duty in the armed forces, police, or firefighting services."
+  },
+  {
+    "id": 124,
+    "word": "apprentice",
+    "display": "apprentice",
+    "alt": [
+      "apprentice"
+    ],
+    "pos": "noun",
+    "def": "A person who is learning a trade or craft from a skilled employer over a fixed period."
+  },
+  {
+    "id": 125,
+    "word": "Caesar",
+    "display": "Caesar",
+    "alt": [
+      "Caesar"
+    ],
+    "pos": "noun",
+    "def": "A title used by Roman emperors; an autocratic ruler or dictator."
+  },
+  {
+    "id": 126,
+    "word": "glamorous",
+    "display": "glamorous or glamourous",
+    "alt": [
+      "glamorous",
+      "glamourous"
+    ],
+    "pos": "adjective",
+    "def": "Full of exciting, alluring charm, beauty, and fascination."
+  },
+  {
+    "id": 127,
+    "word": "suspension",
+    "display": "suspension",
+    "alt": [
+      "suspension"
+    ],
+    "pos": "noun",
+    "def": "The temporary prevention of something from continuing or being in force; or a system of springs supporting a vehicle."
+  },
+  {
+    "id": 128,
+    "word": "fictitious",
+    "display": "fictitious",
+    "alt": [
+      "fictitious"
+    ],
+    "pos": "adjective",
+    "def": "Not real or true; imaginary, invented, or fabricated."
+  },
+  {
+    "id": 129,
+    "word": "snarkiness",
+    "display": "snarkiness",
+    "alt": [
+      "snarkiness"
+    ],
+    "pos": "noun",
+    "def": "The quality of making snide, sarcastic, or sharply critical remarks."
+  },
+  {
+    "id": 130,
+    "word": "collateral",
+    "display": "collateral",
+    "alt": [
+      "collateral"
+    ],
+    "pos": "noun",
+    "def": "Property or assets pledged by a borrower to secure repayment of a loan; or situated side by side."
+  },
+  {
+    "id": 131,
+    "word": "mascara",
+    "display": "mascara",
+    "alt": [
+      "mascara"
+    ],
+    "pos": "noun",
+    "def": "A cosmetic preparation applied to the eyelashes to darken, thicken, or lengthen them."
+  },
+  {
+    "id": 132,
+    "word": "precedent",
+    "display": "precedent",
+    "alt": [
+      "precedent"
+    ],
+    "pos": "noun",
+    "def": "An earlier event, action, or legal decision that serves as an example or guide in subsequent similar cases."
+  },
+  {
+    "id": 133,
+    "word": "magnesium",
+    "display": "magnesium",
+    "alt": [
+      "magnesium"
+    ],
+    "pos": "noun",
+    "def": "A light, silvery-white metallic chemical element with atomic number 12 that burns with a brilliant white flame."
+  },
+  {
+    "id": 134,
+    "word": "haddock",
+    "display": "haddock",
+    "alt": [
+      "haddock"
+    ],
+    "pos": "noun",
+    "def": "An important North Atlantic food fish related to the cod, marked by a dark lateral line."
+  },
+  {
+    "id": 135,
+    "word": "optometrist",
+    "display": "optometrist",
+    "alt": [
+      "optometrist"
+    ],
+    "pos": "noun",
+    "def": "A healthcare professional licensed to examine the eyes for vision defects and prescribe corrective lenses."
+  },
+  {
+    "id": 136,
+    "word": "cosmodrome",
+    "display": "cosmodrome",
+    "alt": [
+      "cosmodrome"
+    ],
+    "pos": "noun",
+    "def": "A launch site and testing complex for spacecraft and rockets, especially in the former Soviet Union."
+  },
+  {
+    "id": 137,
+    "word": "schnauzer",
+    "display": "schnauzer",
+    "alt": [
+      "schnauzer"
+    ],
+    "pos": "noun",
+    "def": "A breed of dog of German origin having a wiry coat, bushy eyebrows, and a bristly beard."
+  },
+  {
+    "id": 138,
+    "word": "regolith",
+    "display": "regolith",
+    "alt": [
+      "regolith"
+    ],
+    "pos": "noun",
+    "def": "The layer of loose, unconsolidated rock, dust, and soil resting on solid bedrock on Earth, the Moon, or a planet."
+  },
+  {
+    "id": 139,
+    "word": "persnickety",
+    "display": "persnickety or persnickity",
+    "alt": [
+      "persnickety",
+      "persnickity"
+    ],
+    "pos": "adjective",
+    "def": "Placing too much emphasis on trivial or minor details; fussy and fastidious."
+  },
+  {
+    "id": 140,
+    "word": "pheasants",
+    "display": "pheasants",
+    "alt": [
+      "pheasants"
+    ],
+    "pos": "plural noun",
+    "def": "Large, long-tailed game birds native to Asia, the males of which have brightly colored plumage."
+  },
+  {
+    "id": 141,
+    "word": "Senegal",
+    "display": "Senegal",
+    "alt": [
+      "Senegal"
+    ],
+    "pos": "proper noun",
+    "def": "A country on the westernmost coast of West Africa whose capital is Dakar."
+  },
+  {
+    "id": 142,
+    "word": "duende",
+    "display": "duende",
+    "alt": [
+      "duende"
+    ],
+    "pos": "noun",
+    "def": "A quality of passion, magnetism, and artistic inspiration; or a spirit in Spanish folklore."
+  },
+  {
+    "id": 143,
+    "word": "Polaroid",
+    "display": "Polaroid",
+    "alt": [
+      "Polaroid"
+    ],
+    "pos": "noun",
+    "def": "A trademark used for glare-reducing optical material or a camera that produces self-developing instant photographs."
+  },
+  {
+    "id": 144,
+    "word": "matrilineal",
+    "display": "matrilineal",
+    "alt": [
+      "matrilineal"
+    ],
+    "pos": "adjective",
+    "def": "Tracing ancestral descent, kinship, or inheritance through the maternal or female line."
+  },
+  {
+    "id": 145,
+    "word": "arnica",
+    "display": "arnica",
+    "alt": [
+      "arnica"
+    ],
+    "pos": "noun",
+    "def": "A perennial mountain herb of the aster family whose yellow flowers are used in topical preparations for bruises."
+  },
+  {
+    "id": 146,
+    "word": "glaucoma",
+    "display": "glaucoma",
+    "alt": [
+      "glaucoma"
+    ],
+    "pos": "noun",
+    "def": "An eye condition marked by increased pressure within the eyeball that can damage the optic nerve and impair vision."
+  },
+  {
+    "id": 147,
+    "word": "adrenaline",
+    "display": "adrenaline",
+    "alt": [
+      "adrenaline"
+    ],
+    "pos": "noun",
+    "def": "A hormone secreted by glands above the kidneys that increases heart rate and prepares the body for fight-or-flight response."
+  },
+  {
+    "id": 148,
+    "word": "staccato",
+    "display": "staccato",
+    "alt": [
+      "staccato"
+    ],
+    "pos": "adjective",
+    "def": "Performed with each musical note sharply detached or separated from the others."
+  },
+  {
+    "id": 149,
+    "word": "romerillo",
+    "display": "romerillo",
+    "alt": [
+      "romerillo"
+    ],
+    "pos": "noun",
+    "def": "A shrubby southwestern North American plant of the aster family that is toxic to grazing livestock."
+  },
+  {
+    "id": 150,
+    "word": "Aeolus",
+    "display": "Aeolus",
+    "alt": [
+      "Aeolus"
+    ],
+    "pos": "proper noun",
+    "def": "In Greek mythology, the divine ruler and keeper of the winds."
+  },
+  {
+    "id": 151,
+    "word": "thrummed",
+    "display": "thrummed",
+    "alt": [
+      "thrummed"
+    ],
+    "pos": "verb",
+    "def": "Played a stringed instrument idly by plucking, or made a continuous rhythmic humming vibration."
+  },
+  {
+    "id": 152,
+    "word": "lapels",
+    "display": "lapels",
+    "alt": [
+      "lapels"
+    ],
+    "pos": "plural noun",
+    "def": "The folded flaps of cloth on the front of a jacket or coat that are continuations of the collar."
+  },
+  {
+    "id": 153,
+    "word": "burnished",
+    "display": "burnished",
+    "alt": [
+      "burnished"
+    ],
+    "pos": "adjective",
+    "def": "Polished to a smooth, glossy luster by rubbing."
+  },
+  {
+    "id": 154,
+    "word": "unrelenting",
+    "display": "unrelenting",
+    "alt": [
+      "unrelenting"
+    ],
+    "pos": "adjective",
+    "def": "Not yielding in strength, severity, or determination; relentless."
+  },
+  {
+    "id": 155,
+    "word": "imperial",
+    "display": "imperial",
+    "alt": [
+      "imperial"
+    ],
+    "pos": "adjective",
+    "def": "Relating to an empire, an emperor, or an empress; majestic and sovereign."
+  },
+  {
+    "id": 156,
+    "word": "arsonists",
+    "display": "arsonists",
+    "alt": [
+      "arsonists"
+    ],
+    "pos": "plural noun",
+    "def": "Criminals who intentionally and maliciously set fire to buildings, wildland, or other property."
+  },
+  {
+    "id": 157,
+    "word": "generator",
+    "display": "generator",
+    "alt": [
+      "generator"
+    ],
+    "pos": "noun",
+    "def": "A machine that converts mechanical energy into electrical energy."
+  },
+  {
+    "id": 158,
+    "word": "authority",
+    "display": "authority",
+    "alt": [
+      "authority"
+    ],
+    "pos": "noun",
+    "def": "The power or right to give orders, make decisions, and enforce obedience; or an expert on a subject."
+  },
+  {
+    "id": 159,
+    "word": "doberman",
+    "display": "doberman",
+    "alt": [
+      "doberman"
+    ],
+    "pos": "noun",
+    "def": "A medium-to-large breed of dog of German origin with a sleek short coat, bred for guard and police work."
+  },
+  {
+    "id": 160,
+    "word": "decisively",
+    "display": "decisively",
+    "alt": [
+      "decisively"
+    ],
+    "pos": "adverb",
+    "def": "In a manner that settles an issue conclusively or shows firmness and resolve."
+  },
+  {
+    "id": 161,
+    "word": "inanimate",
+    "display": "inanimate",
+    "alt": [
+      "inanimate"
+    ],
+    "pos": "adjective",
+    "def": "Not endowed with life; lifeless or showing no sign of consciousness."
+  },
+  {
+    "id": 162,
+    "word": "auditory",
+    "display": "auditory",
+    "alt": [
+      "auditory"
+    ],
+    "pos": "adjective",
+    "def": "Of or relating to the sense or organs of hearing."
+  },
+  {
+    "id": 163,
+    "word": "sentinels",
+    "display": "sentinels",
+    "alt": [
+      "sentinels"
+    ],
+    "pos": "plural noun",
+    "def": "Soldiers or guards whose job is to stand and keep watch against danger."
+  },
+  {
+    "id": 164,
+    "word": "self-sufficient",
+    "display": "self-sufficient",
+    "alt": [
+      "self-sufficient"
+    ],
+    "pos": "adjective",
+    "def": "Able to maintain oneself or provide for one's own needs without outside aid."
+  },
+  {
+    "id": 165,
+    "word": "subscription",
+    "display": "subscription",
+    "alt": [
+      "subscription"
+    ],
+    "pos": "noun",
+    "def": "An arrangement to receive something, such as a periodical or digital service, regularly by paying in advance."
+  },
+  {
+    "id": 166,
+    "word": "conspicuous",
+    "display": "conspicuous",
+    "alt": [
+      "conspicuous"
+    ],
+    "pos": "adjective",
+    "def": "Standing out clearly to the eye; attracting notice or attention."
+  },
+  {
+    "id": 167,
+    "word": "procession",
+    "display": "procession",
+    "alt": [
+      "procession"
+    ],
+    "pos": "noun",
+    "def": "A number of people or vehicles moving forward in an orderly, ceremonial line."
+  },
+  {
+    "id": 168,
+    "word": "perpendicular",
+    "display": "perpendicular",
+    "alt": [
+      "perpendicular"
+    ],
+    "pos": "adjective",
+    "def": "Intersecting or standing at a right angle of ninety degrees to a given line, plane, or surface."
+  },
+  {
+    "id": 169,
+    "word": "seminal",
+    "display": "seminal",
+    "alt": [
+      "seminal"
+    ],
+    "pos": "adjective",
+    "def": "Strongly influencing later developments; original, formative, and groundbreaking."
+  },
+  {
+    "id": 170,
+    "word": "torrential",
+    "display": "torrential",
+    "alt": [
+      "torrential"
+    ],
+    "pos": "adjective",
+    "def": "Falling rapidly and copiously in a heavy, rushing stream, especially of rain."
+  },
+  {
+    "id": 171,
+    "word": "consulate",
+    "display": "consulate",
+    "alt": [
+      "consulate"
+    ],
+    "pos": "noun",
+    "def": "The official building or office in which a diplomatic representative conducts commercial and citizen duties in a foreign city."
+  },
+  {
+    "id": 172,
+    "word": "sauntered",
+    "display": "sauntered",
+    "alt": [
+      "sauntered"
+    ],
+    "pos": "verb",
+    "def": "Walked in a slow, relaxed, and unhurried manner; strolled."
+  },
+  {
+    "id": 173,
+    "word": "modish",
+    "display": "modish",
+    "alt": [
+      "modish"
+    ],
+    "pos": "adjective",
+    "def": "Conforming to the current fashion; stylish and trendy."
+  },
+  {
+    "id": 174,
+    "word": "juniper",
+    "display": "juniper",
+    "alt": [
+      "juniper"
+    ],
+    "pos": "noun",
+    "def": "An evergreen coniferous shrub or tree with aromatic berry-like cones."
+  },
+  {
+    "id": 175,
+    "word": "unconscious",
+    "display": "unconscious",
+    "alt": [
+      "unconscious"
+    ],
+    "pos": "adjective",
+    "def": "Temporarily deprived of awareness and sensory perception, or done without realizing it."
+  },
+  {
+    "id": 176,
+    "word": "palazzo",
+    "display": "palazzo",
+    "alt": [
+      "palazzo"
+    ],
+    "pos": "noun",
+    "def": "A large, grand palace-like building or residence, especially in Italy."
+  },
+  {
+    "id": 177,
+    "word": "foliage",
+    "display": "foliage",
+    "alt": [
+      "foliage"
+    ],
+    "pos": "noun",
+    "def": "The collective leaves of a plant, tree, or forest."
+  },
+  {
+    "id": 178,
+    "word": "irrelevant",
+    "display": "irrelevant",
+    "alt": [
+      "irrelevant"
+    ],
+    "pos": "adjective",
+    "def": "Not connected with or applicable to the matter at hand."
+  },
+  {
+    "id": 179,
+    "word": "quizzically",
+    "display": "quizzically",
+    "alt": [
+      "quizzically"
+    ],
+    "pos": "adverb",
+    "def": "In a mildly puzzled, questioning, or teasing manner."
+  },
+  {
+    "id": 180,
+    "word": "diplomatically",
+    "display": "diplomatically",
+    "alt": [
+      "diplomatically"
+    ],
+    "pos": "adverb",
+    "def": "In a tactful, sensitive, and skillful way that avoids offending others."
+  },
+  {
+    "id": 181,
+    "word": "increments",
+    "display": "increments",
+    "alt": [
+      "increments"
+    ],
+    "pos": "plural noun",
+    "def": "Regular, often small increases or additions in quantity, value, or degree."
+  },
+  {
+    "id": 182,
+    "word": "calibrate",
+    "display": "calibrate",
+    "alt": [
+      "calibrate"
+    ],
+    "pos": "verb",
+    "def": "To check, adjust, or standardize the graduations of a measuring instrument for accuracy."
+  },
+  {
+    "id": 183,
+    "word": "reassurance",
+    "display": "reassurance",
+    "alt": [
+      "reassurance"
+    ],
+    "pos": "noun",
+    "def": "The action of removing someone's doubts or fears and restoring confidence."
+  },
+  {
+    "id": 184,
+    "word": "credenza",
+    "display": "credenza",
+    "alt": [
+      "credenza"
+    ],
+    "pos": "noun",
+    "def": "A dining room sideboard or office cabinet, typically having sliding doors and no legs."
+  },
+  {
+    "id": 185,
+    "word": "protectorate",
+    "display": "protectorate",
+    "alt": [
+      "protectorate"
+    ],
+    "pos": "noun",
+    "def": "A state or territory that is controlled and defended by a stronger sovereign state."
+  },
+  {
+    "id": 186,
+    "word": "phenomenon",
+    "display": "phenomenon",
+    "alt": [
+      "phenomenon"
+    ],
+    "pos": "noun",
+    "def": "An observable fact, occurrence, or remarkable circumstance that can be perceived or studied."
+  },
+  {
+    "id": 187,
+    "word": "pulmonary",
+    "display": "pulmonary",
+    "alt": [
+      "pulmonary"
+    ],
+    "pos": "adjective",
+    "def": "Relating to, affecting, or occurring in the lungs."
+  },
+  {
+    "id": 188,
+    "word": "alleviate",
+    "display": "alleviate",
+    "alt": [
+      "alleviate"
+    ],
+    "pos": "verb",
+    "def": "To make suffering, deficiency, or a problem less severe; to relieve."
+  },
+  {
+    "id": 189,
+    "word": "approximation",
+    "display": "approximation",
+    "alt": [
+      "approximation"
+    ],
+    "pos": "noun",
+    "def": "A value, figure, or estimate that is nearly but not exactly correct."
+  },
+  {
+    "id": 190,
+    "word": "legation",
+    "display": "legation",
+    "alt": [
+      "legation"
+    ],
+    "pos": "noun",
+    "def": "A diplomatic mission in a foreign country headed by a minister rather than an ambassador."
+  },
+  {
+    "id": 191,
+    "word": "censers",
+    "display": "censers",
+    "alt": [
+      "censers"
+    ],
+    "pos": "plural noun",
+    "def": "Ornamental vessels in which incense is burned, especially during religious ceremonies."
+  },
+  {
+    "id": 192,
+    "word": "diffidence",
+    "display": "diffidence",
+    "alt": [
+      "diffidence"
+    ],
+    "pos": "noun",
+    "def": "Modesty or shyness resulting from a lack of self-confidence."
+  },
+  {
+    "id": 193,
+    "word": "pathologically",
+    "display": "pathologically",
+    "alt": [
+      "pathologically"
+    ],
+    "pos": "adverb",
+    "def": "In a way that is caused by a physical or mental disorder, or to an extreme and compulsive degree."
+  },
+  {
+    "id": 194,
+    "word": "butane",
+    "display": "butane",
+    "alt": [
+      "butane"
+    ],
+    "pos": "noun",
+    "def": "A colorless, flammable hydrocarbon gas derived from petroleum and used as fuel in lighters and portable stoves."
+  },
+  {
+    "id": 195,
+    "word": "glycerin",
+    "display": "glycerin or glycerine",
+    "alt": [
+      "glycerin",
+      "glycerine"
+    ],
+    "pos": "noun",
+    "def": "A sweet, syrupy, colorless liquid obtained from fats and oils, widely used in soaps, lotions, and pharmaceuticals."
+  },
+  {
+    "id": 196,
+    "word": "cataract",
+    "display": "cataract",
+    "alt": [
+      "cataract"
+    ],
+    "pos": "noun",
+    "def": "A clouding of the lens of the eye that impairs vision; or a large, steep waterfall."
+  },
+  {
+    "id": 197,
+    "word": "alabaster",
+    "display": "alabaster",
+    "alt": [
+      "alabaster"
+    ],
+    "pos": "noun",
+    "def": "A fine-grained, translucent, typically white gypsum or calcite stone carved into ornaments."
+  },
+  {
+    "id": 198,
+    "word": "quiche",
+    "display": "quiche",
+    "alt": [
+      "quiche"
+    ],
+    "pos": "noun",
+    "def": "A savory open tart consisting of a pastry crust filled with a baked custard of eggs, cream, cheese, and other ingredients."
+  },
+  {
+    "id": 199,
+    "word": "arugula",
+    "display": "arugula",
+    "alt": [
+      "arugula"
+    ],
+    "pos": "noun",
+    "def": "An edible Mediterranean salad green of the mustard family with deeply lobed, peppery-flavored leaves."
+  },
+  {
+    "id": 200,
+    "word": "euphemism",
+    "display": "euphemism",
+    "alt": [
+      "euphemism"
+    ],
+    "pos": "noun",
+    "def": "A mild or indirect word or expression substituted for one considered too harsh or blunt."
+  },
+  {
+    "id": 201,
+    "word": "vibrometer",
+    "display": "vibrometer",
+    "alt": [
+      "vibrometer"
+    ],
+    "pos": "noun",
+    "def": "A scientific instrument used for measuring and recording mechanical vibrations."
+  },
+  {
+    "id": 202,
+    "word": "acolyte",
+    "display": "acolyte",
+    "alt": [
+      "acolyte"
+    ],
+    "pos": "noun",
+    "def": "A person who assists the celebrant in a religious service, or a devoted follower and attendant."
+  },
+  {
+    "id": 203,
+    "word": "mayonnaise",
+    "display": "mayonnaise",
+    "alt": [
+      "mayonnaise"
+    ],
+    "pos": "noun",
+    "def": "A thick, creamy dressing made of egg yolks, oil, and vinegar or lemon juice beaten into an emulsion."
+  },
+  {
+    "id": 204,
+    "word": "innocuous",
+    "display": "innocuous",
+    "alt": [
+      "innocuous"
+    ],
+    "pos": "adjective",
+    "def": "Not harmful, offensive, or injurious; completely harmless."
+  },
+  {
+    "id": 205,
+    "word": "sputum",
+    "display": "sputum",
+    "alt": [
+      "sputum"
+    ],
+    "pos": "noun",
+    "def": "Mucus and matter coughed up and expectorated from the respiratory tract."
+  },
+  {
+    "id": 206,
+    "word": "Tripoli",
+    "display": "Tripoli",
+    "alt": [
+      "Tripoli"
+    ],
+    "pos": "proper noun",
+    "def": "The capital and largest city of Libya, situated on the coast of the Mediterranean Sea."
+  },
+  {
+    "id": 207,
+    "word": "cerulean",
+    "display": "cerulean or caerulean",
+    "alt": [
+      "cerulean",
+      "caerulean"
+    ],
+    "pos": "adjective",
+    "def": "Resembling the deep blue color of a cloudless sky."
+  },
+  {
+    "id": 208,
+    "word": "neurological",
+    "display": "neurological",
+    "alt": [
+      "neurological"
+    ],
+    "pos": "adjective",
+    "def": "Relating to the anatomy, functions, and disorders of the nervous system."
+  },
+  {
+    "id": 209,
+    "word": "cul-de-sac",
+    "display": "cul-de-sac",
+    "alt": [
+      "cul-de-sac"
+    ],
+    "pos": "noun",
+    "def": "A street or passage closed at one end, often having a circular turnaround area."
+  },
+  {
+    "id": 210,
+    "word": "mysticetes",
+    "display": "mysticetes",
+    "alt": [
+      "mysticetes"
+    ],
+    "pos": "plural noun",
+    "def": "Baleen whales; large marine mammals that filter food from water using keratin whalebone plates instead of teeth."
+  },
+  {
+    "id": 211,
+    "word": "electrolytes",
+    "display": "electrolytes",
+    "alt": [
+      "electrolytes"
+    ],
+    "pos": "plural noun",
+    "def": "Substances that dissociate into ions in solution and acquire the capacity to conduct electricity, essential for bodily function."
+  },
+  {
+    "id": 212,
+    "word": "Eritrea",
+    "display": "Eritrea",
+    "alt": [
+      "Eritrea"
+    ],
+    "pos": "proper noun",
+    "def": "A country in the Horn of Africa bordering the Red Sea, whose capital is Asmara."
+  },
+  {
+    "id": 213,
+    "word": "ototoxic",
+    "display": "ototoxic",
+    "alt": [
+      "ototoxic"
+    ],
+    "pos": "adjective",
+    "def": "Having a harmful or damaging effect on the organs of hearing or balance."
+  },
+  {
+    "id": 214,
+    "word": "forsythia",
+    "display": "forsythia",
+    "alt": [
+      "forsythia"
+    ],
+    "pos": "noun",
+    "def": "An ornamental shrub of the olive family whose bright yellow bell-shaped flowers bloom in early spring before the leaves appear."
+  },
+  {
+    "id": 215,
+    "word": "Aphrodite",
+    "display": "Aphrodite",
+    "alt": [
+      "Aphrodite"
+    ],
+    "pos": "proper noun",
+    "def": "The ancient Greek goddess of love, beauty, and fertility."
+  },
+  {
+    "id": 216,
+    "word": "salicylic acid",
+    "display": "salicylic acid",
+    "alt": [
+      "salicylic acid"
+    ],
+    "pos": "noun",
+    "def": "A crystalline organic compound derived from willow bark, used in skin-care treatments and in making aspirin."
+  },
+  {
+    "id": 217,
+    "word": "bogong moth",
+    "display": "bogong moth",
+    "alt": [
+      "bogong moth"
+    ],
+    "pos": "noun",
+    "def": "A nocturnal Australian insect known for migrating in vast numbers to cool alpine caves during summer."
+  },
+  {
+    "id": 218,
+    "word": "stomatopods",
+    "display": "stomatopods",
+    "alt": [
+      "stomatopods"
+    ],
+    "pos": "plural noun",
+    "def": "Mantis shrimps; predatory marine crustaceans equipped with powerful raptorial claws."
+  },
+  {
+    "id": 219,
+    "word": "yakuza",
+    "display": "yakuza",
+    "alt": [
+      "yakuza"
+    ],
+    "pos": "noun",
+    "def": "A member or syndicate of traditional organized crime groups in Japan."
+  },
+  {
+    "id": 220,
+    "word": "frankincense",
+    "display": "frankincense",
+    "alt": [
+      "frankincense"
+    ],
+    "pos": "noun",
+    "def": "An aromatic gum resin obtained from trees of the genus Boswellia and burned as incense."
+  },
+  {
+    "id": 221,
+    "word": "Krio",
+    "display": "Krio",
+    "alt": [
+      "Krio"
+    ],
+    "pos": "proper noun",
+    "def": "An English-based creole language widely spoken as a lingua franca in Sierra Leone."
+  },
+  {
+    "id": 222,
+    "word": "solenodon",
+    "display": "solenodon",
+    "alt": [
+      "solenodon"
+    ],
+    "pos": "noun",
+    "def": "A nocturnal, burrowing, insect-eating mammal native to Cuba and Hispaniola that has a long snout and venomous saliva."
+  },
+  {
+    "id": 223,
+    "word": "Addis Ababa",
+    "display": "Addis Ababa",
+    "alt": [
+      "Addis Ababa"
+    ],
+    "pos": "proper noun",
+    "def": "The capital and largest city of Ethiopia, located in the central highlands."
+  },
+  {
+    "id": 224,
+    "word": "lactobacillus",
+    "display": "lactobacillus",
+    "alt": [
+      "lactobacillus"
+    ],
+    "pos": "noun",
+    "def": "Any of a genus of rod-shaped beneficial bacteria that convert sugars into lactic acid, as in yogurt fermentation."
+  },
+  {
+    "id": 225,
+    "word": "spes phthisica",
+    "display": "spes phthisica",
+    "alt": [
+      "spes phthisica"
+    ],
+    "pos": "noun",
+    "def": "An ungrounded feeling of euphoria and hopefulness about recovery formerly observed in patients with advanced tuberculosis."
+  },
+  {
+    "id": 226,
+    "word": "brand",
+    "display": "brand",
+    "alt": [
+      "brand"
+    ],
+    "pos": "noun",
+    "def": "A distinct category of goods identified by name as the product of a single firm or maker."
+  },
+  {
+    "id": 227,
+    "word": "never",
+    "display": "never",
+    "alt": [
+      "never"
+    ],
+    "pos": "adverb",
+    "def": "At no time in the past or future; not ever."
+  },
+  {
+    "id": 228,
+    "word": "sheet",
+    "display": "sheet",
+    "alt": [
+      "sheet"
+    ],
+    "pos": "noun",
+    "def": "A large rectangular piece of cotton or linen cloth used on a bed, or a thin flat piece of paper."
+  },
+  {
+    "id": 229,
+    "word": "soul",
+    "display": "soul",
+    "alt": [
+      "soul"
+    ],
+    "pos": "noun",
+    "def": "The spiritual or immaterial principle of a human being, regarded as the seat of emotion and character."
+  },
+  {
+    "id": 230,
+    "word": "trunk",
+    "display": "trunk",
+    "alt": [
+      "trunk"
+    ],
+    "pos": "noun",
+    "def": "The main woody stem of a tree, an elephant's elongated nose, or the luggage compartment of a car."
+  },
+  {
+    "id": 231,
+    "word": "flesh",
+    "display": "flesh",
+    "alt": [
+      "flesh"
+    ],
+    "pos": "noun",
+    "def": "The soft muscular tissue of the body of a vertebrate, or the pulpy edible part of a fruit."
+  },
+  {
+    "id": 232,
+    "word": "hound",
+    "display": "hound",
+    "alt": [
+      "hound"
+    ],
+    "pos": "noun",
+    "def": "A breed of dog used for hunting that tracks prey by scent or sight."
+  },
+  {
+    "id": 233,
+    "word": "beckon",
+    "display": "beckon",
+    "alt": [
+      "beckon"
+    ],
+    "pos": "verb",
+    "def": "To make a gesture with the hand, arm, or head to encourage someone to approach or follow."
+  },
+  {
+    "id": 234,
+    "word": "darkroom",
+    "display": "darkroom",
+    "alt": [
+      "darkroom"
+    ],
+    "pos": "noun",
+    "def": "A room from which normal light is excluded, used for developing light-sensitive photographic film."
+  },
+  {
+    "id": 235,
+    "word": "looting",
+    "display": "looting",
+    "alt": [
+      "looting"
+    ],
+    "pos": "verb",
+    "def": "Stealing goods from shops or homes, typically during a riot, war, or natural disaster."
+  },
+  {
+    "id": 236,
+    "word": "gopher",
+    "display": "gopher",
+    "alt": [
+      "gopher"
+    ],
+    "pos": "noun",
+    "def": "A burrowing North American rodent with fur-lined cheek pouches outside its mouth."
+  },
+  {
+    "id": 237,
+    "word": "sliver",
+    "display": "sliver",
+    "alt": [
+      "sliver"
+    ],
+    "pos": "noun",
+    "def": "A small, thin, narrow piece cut or split off from a larger object; a splinter."
+  },
+  {
+    "id": 238,
+    "word": "grapevine",
+    "display": "grapevine",
+    "alt": [
+      "grapevine"
+    ],
+    "pos": "noun",
+    "def": "A woody climbing vine that bears clusters of berries, or an informal network for passing news from person to person."
+  },
+  {
+    "id": 239,
+    "word": "budget",
+    "display": "budget",
+    "alt": [
+      "budget"
+    ],
+    "pos": "noun",
+    "def": "An estimate and plan of income and expenditure for a set period of time."
+  },
+  {
+    "id": 240,
+    "word": "nursery",
+    "display": "nursery",
+    "alt": [
+      "nursery"
+    ],
+    "pos": "noun",
+    "def": "A room in a house for the care of young children, or a place where young plants and trees are grown for sale."
+  },
+  {
+    "id": 241,
+    "word": "avid",
+    "display": "avid",
+    "alt": [
+      "avid"
+    ],
+    "pos": "adjective",
+    "def": "Having or showing a keen interest and enthusiastic eagerness for something."
+  },
+  {
+    "id": 242,
+    "word": "bandage",
+    "display": "bandage",
+    "alt": [
+      "bandage"
+    ],
+    "pos": "noun",
+    "def": "A strip of woven material used to bind up a wound or to protect an injured part of the body."
+  },
+  {
+    "id": 243,
+    "word": "wrath",
+    "display": "wrath",
+    "alt": [
+      "wrath"
+    ],
+    "pos": "noun",
+    "def": "Extreme, fierce, or vengeful anger."
+  },
+  {
+    "id": 244,
+    "word": "throttle",
+    "display": "throttle",
+    "alt": [
+      "throttle"
+    ],
+    "pos": "noun",
+    "def": "A valve or lever that regulates the flow of fuel or steam to an engine, controlling its speed."
+  },
+  {
+    "id": 245,
+    "word": "creamery",
+    "display": "creamery",
+    "alt": [
+      "creamery"
+    ],
+    "pos": "noun",
+    "def": "A dairy establishment where butter and cheese are made, or where rich dairy products are processed and sold."
+  },
+  {
+    "id": 246,
+    "word": "worry",
+    "display": "worry",
+    "alt": [
+      "worry"
+    ],
+    "pos": "verb",
+    "def": "To feel or allow one's mind to dwell on difficulty, trouble, or anxiety."
+  },
+  {
+    "id": 247,
+    "word": "chest",
+    "display": "chest",
+    "alt": [
+      "chest"
+    ],
+    "pos": "noun",
+    "def": "The front surface of a person's body between the neck and the abdomen, or a large strong box for storage."
+  },
+  {
+    "id": 248,
+    "word": "piggy",
+    "display": "piggy",
+    "alt": [
+      "piggy"
+    ],
+    "pos": "noun",
+    "def": "A child's word for a small pig or a toe."
+  },
+  {
+    "id": 249,
+    "word": "carry",
+    "display": "carry",
+    "alt": [
+      "carry"
+    ],
+    "pos": "verb",
+    "def": "To support and move someone or something from one place to another."
+  },
+  {
+    "id": 250,
+    "word": "bones",
+    "display": "bones",
+    "alt": [
+      "bones"
+    ],
+    "pos": "plural noun",
+    "def": "The rigid pieces of calcified tissue that make up the skeleton in vertebrates."
+  },
+  {
+    "id": 251,
+    "word": "schools",
+    "display": "schools",
+    "alt": [
+      "schools"
+    ],
+    "pos": "plural noun",
+    "def": "Institutions for educating students, or large groups of fish swimming together."
+  },
+  {
+    "id": 252,
+    "word": "cheeky",
+    "display": "cheeky",
+    "alt": [
+      "cheeky"
+    ],
+    "pos": "adjective",
+    "def": "Impudent, irreverent, or playfully bold in an amusing way."
+  },
+  {
+    "id": 253,
+    "word": "itching",
+    "display": "itching",
+    "alt": [
+      "itching"
+    ],
+    "pos": "verb",
+    "def": "Experiencing an uncomfortable tingling irritation of the skin that causes a desire to scratch."
+  },
+  {
+    "id": 254,
+    "word": "crisscross",
+    "display": "crisscross",
+    "alt": [
+      "crisscross"
+    ],
+    "pos": "adjective",
+    "def": "Marked with or forming a pattern of intersecting straight lines."
+  },
+  {
+    "id": 255,
+    "word": "backyard",
+    "display": "backyard",
+    "alt": [
+      "backyard"
+    ],
+    "pos": "noun",
+    "def": "A yard or enclosed lawn area located behind a house."
+  },
+  {
+    "id": 256,
+    "word": "ice cream",
+    "display": "ice cream",
+    "alt": [
+      "ice cream"
+    ],
+    "pos": "noun",
+    "def": "A sweet, smooth frozen food made from churned dairy milk or cream and flavorings."
+  },
+  {
+    "id": 257,
+    "word": "dagger",
+    "display": "dagger",
+    "alt": [
+      "dagger"
+    ],
+    "pos": "noun",
+    "def": "A short knife with a pointed and edged blade, used as a weapon for thrusting."
+  },
+  {
+    "id": 258,
+    "word": "bluff",
+    "display": "bluff",
+    "alt": [
+      "bluff"
+    ],
+    "pos": "verb",
+    "def": "To try to deceive someone as to one's abilities or intentions; or a steep cliff with a broad face."
+  },
+  {
+    "id": 259,
+    "word": "fritter",
+    "display": "fritter",
+    "alt": [
+      "fritter"
+    ],
+    "pos": "noun",
+    "def": "A small portion of fruit, vegetables, or meat coated in batter and deep-fried; or to waste time or energy."
+  },
+  {
+    "id": 260,
+    "word": "fanfare",
+    "display": "fanfare",
+    "alt": [
+      "fanfare"
+    ],
+    "pos": "noun",
+    "def": "A short ceremonial flourish of trumpets, or a showy outward display attracting attention."
+  },
+  {
+    "id": 261,
+    "word": "dingy",
+    "display": "dingy",
+    "alt": [
+      "dingy"
+    ],
+    "pos": "adjective",
+    "def": "Gloomy, drab, and dull in appearance from lack of cleaning or freshness."
+  },
+  {
+    "id": 262,
+    "word": "ashen",
+    "display": "ashen",
+    "alt": [
+      "ashen"
+    ],
+    "pos": "adjective",
+    "def": "Of the pale gray color of wood ashes; deadly pale from shock or fear."
+  },
+  {
+    "id": 263,
+    "word": "excuse",
+    "display": "excuse",
+    "alt": [
+      "excuse"
+    ],
+    "pos": "noun",
+    "def": "A reason or explanation put forward to defend or justify a fault or offense."
+  },
+  {
+    "id": 264,
+    "word": "public",
+    "display": "public",
+    "alt": [
+      "public"
+    ],
+    "pos": "adjective",
+    "def": "Of, concerning, or open to all the people of a community or nation as a whole."
+  },
+  {
+    "id": 265,
+    "word": "rosemary",
+    "display": "rosemary",
+    "alt": [
+      "rosemary"
+    ],
+    "pos": "noun",
+    "def": "An evergreen aromatic shrub of the mint family with needle-like leaves used as a culinary herb."
+  },
+  {
+    "id": 266,
+    "word": "concern",
+    "display": "concern",
+    "alt": [
+      "concern"
+    ],
+    "pos": "noun",
+    "def": "Anxiety or worry; or a matter of interest and importance to someone."
+  },
+  {
+    "id": 267,
+    "word": "usually",
+    "display": "usually",
+    "alt": [
+      "usually"
+    ],
+    "pos": "adverb",
+    "def": "Under normal conditions; generally or most of the time."
+  },
+  {
+    "id": 268,
+    "word": "wrapper",
+    "display": "wrapper",
+    "alt": [
+      "wrapper"
+    ],
+    "pos": "noun",
+    "def": "A piece of paper, foil, or plastic covering that encloses and protects a product or piece of candy."
+  },
+  {
+    "id": 269,
+    "word": "scrimpy",
+    "display": "scrimpy",
+    "alt": [
+      "scrimpy"
+    ],
+    "pos": "adjective",
+    "def": "Meager, scanty, or barely sufficient in amount or size."
+  },
+  {
+    "id": 270,
+    "word": "thrice",
+    "display": "thrice",
+    "alt": [
+      "thrice"
+    ],
+    "pos": "adverb",
+    "def": "Three times in succession or to a threefold degree."
+  },
+  {
+    "id": 271,
+    "word": "hickory",
+    "display": "hickory",
+    "alt": [
+      "hickory"
+    ],
+    "pos": "noun",
+    "def": "A North American tree of the walnut family that yields tough, heavy wood and edible nuts."
+  },
+  {
+    "id": 272,
+    "word": "specialty",
+    "display": "specialty",
+    "alt": [
+      "specialty"
+    ],
+    "pos": "noun",
+    "def": "A pursuit, area of study, or skill to which someone has devoted much time and in which they are an expert."
+  },
+  {
+    "id": 273,
+    "word": "convent",
+    "display": "convent",
+    "alt": [
+      "convent"
+    ],
+    "pos": "noun",
+    "def": "A Christian community under monastic vows, especially one of nuns, or the building they occupy."
+  },
+  {
+    "id": 274,
+    "word": "pursue",
+    "display": "pursue",
+    "alt": [
+      "pursue"
+    ],
+    "pos": "verb",
+    "def": "To follow or chase someone or something in order to catch, accomplish, or attain it."
+  },
+  {
+    "id": 275,
+    "word": "feature",
+    "display": "feature",
+    "alt": [
+      "feature"
+    ],
+    "pos": "noun",
+    "def": "A distinctive attribute, aspect, or prominent part of the face or of something else."
+  },
+  {
+    "id": 276,
+    "word": "bassist",
+    "display": "bassist",
+    "alt": [
+      "bassist"
+    ],
+    "pos": "noun",
+    "def": "A musician who plays the double bass or electric bass guitar."
+  },
+  {
+    "id": 277,
+    "word": "community",
+    "display": "community",
+    "alt": [
+      "community"
+    ],
+    "pos": "noun",
+    "def": "A group of people living in the same place or having a particular characteristic or interest in common."
+  },
+  {
+    "id": 278,
+    "word": "instinct",
+    "display": "instinct",
+    "alt": [
+      "instinct"
+    ],
+    "pos": "noun",
+    "def": "An innate, typically fixed pattern of behavior in animals or people in response to certain stimuli."
+  },
+  {
+    "id": 279,
+    "word": "dismayed",
+    "display": "dismayed",
+    "alt": [
+      "dismayed"
+    ],
+    "pos": "adjective",
+    "def": "Caused to feel consternation, distress, and loss of courage."
+  },
+  {
+    "id": 280,
+    "word": "zinger",
+    "display": "zinger",
+    "alt": [
+      "zinger"
+    ],
+    "pos": "noun",
+    "def": "A striking, witty, or sharply pointed remark or retort."
+  },
+  {
+    "id": 281,
+    "word": "shrewd",
+    "display": "shrewd",
+    "alt": [
+      "shrewd"
+    ],
+    "pos": "adjective",
+    "def": "Having or showing sharp powers of judgment; astute and clever."
+  },
+  {
+    "id": 282,
+    "word": "futon",
+    "display": "futon",
+    "alt": [
+      "futon"
+    ],
+    "pos": "noun",
+    "def": "A padded mattress originating in Japan that can be rolled up on the floor or placed on a folding wooden frame."
+  },
+  {
+    "id": 283,
+    "word": "measles",
+    "display": "measles",
+    "alt": [
+      "measles"
+    ],
+    "pos": "noun",
+    "def": "An infectious viral disease causing fever and a red circular rash on the skin."
+  },
+  {
+    "id": 284,
+    "word": "burgundy",
+    "display": "burgundy",
+    "alt": [
+      "burgundy"
+    ],
+    "pos": "noun",
+    "def": "A deep purplish-red color resembling the wine produced in the region of the same name in eastern France."
+  },
+  {
+    "id": 285,
+    "word": "prelude",
+    "display": "prelude",
+    "alt": [
+      "prelude"
+    ],
+    "pos": "noun",
+    "def": "An action or event serving as an introduction to something more important, or an introductory musical piece."
+  },
+  {
+    "id": 286,
+    "word": "pumice",
+    "display": "pumice",
+    "alt": [
+      "pumice"
+    ],
+    "pos": "noun",
+    "def": "A very light and porous volcanic rock formed when frothy lava solidifies rapidly."
+  },
+  {
+    "id": 287,
+    "word": "socialite",
+    "display": "socialite",
+    "alt": [
+      "socialite"
+    ],
+    "pos": "noun",
+    "def": "A person who is well known in fashionable society and is fond of attending high-profile parties and gatherings."
+  },
+  {
+    "id": 288,
+    "word": "profession",
+    "display": "profession",
+    "alt": [
+      "profession"
+    ],
+    "pos": "noun",
+    "def": "A paid occupation, especially one that involves prolonged training and a formal qualification."
+  },
+  {
+    "id": 289,
+    "word": "certainty",
+    "display": "certainty",
+    "alt": [
+      "certainty"
+    ],
+    "pos": "noun",
+    "def": "Firm conviction that something is the case, or something that is completely reliable and sure to happen."
+  },
+  {
+    "id": 290,
+    "word": "bulbous",
+    "display": "bulbous",
+    "alt": [
+      "bulbous"
+    ],
+    "pos": "adjective",
+    "def": "Fat, round, or bulging in shape like an underground plant bulb."
+  },
+  {
+    "id": 291,
+    "word": "cabinetry",
+    "display": "cabinetry",
+    "alt": [
+      "cabinetry"
+    ],
+    "pos": "noun",
+    "def": "Wooden cupboards, shelves, and cases made by a skilled woodworker."
+  },
+  {
+    "id": 292,
+    "word": "discussion",
+    "display": "discussion",
+    "alt": [
+      "discussion"
+    ],
+    "pos": "noun",
+    "def": "The action or process of talking about something in order to reach a decision or exchange ideas."
+  },
+  {
+    "id": 293,
+    "word": "grievous",
+    "display": "grievous",
+    "alt": [
+      "grievous"
+    ],
+    "pos": "adjective",
+    "def": "Very severe, serious, or causing great sorrow and pain."
+  },
+  {
+    "id": 294,
+    "word": "proportion",
+    "display": "proportion",
+    "alt": [
+      "proportion"
+    ],
+    "pos": "noun",
+    "def": "A part, share, or number considered in comparative relation to a whole."
+  },
+  {
+    "id": 295,
+    "word": "traitorous",
+    "display": "traitorous",
+    "alt": [
+      "traitorous"
+    ],
+    "pos": "adjective",
+    "def": "Guilty of or involving betrayal of one's country, group, or trust."
+  },
+  {
+    "id": 296,
+    "word": "addictive",
+    "display": "addictive",
+    "alt": [
+      "addictive"
+    ],
+    "pos": "adjective",
+    "def": "Causing or likely to cause someone to become physiologically or psychologically dependent on a substance or activity."
+  },
+  {
+    "id": 297,
+    "word": "conjecture",
+    "display": "conjecture",
+    "alt": [
+      "conjecture"
+    ],
+    "pos": "noun",
+    "def": "An opinion or conclusion formed on the basis of incomplete information; a supposition or guess."
+  },
+  {
+    "id": 298,
+    "word": "fiefdom",
+    "display": "fiefdom",
+    "alt": [
+      "fiefdom"
+    ],
+    "pos": "noun",
+    "def": "An estate or domain controlled by a feudal lord, or an area over which someone exercises dominant control."
+  },
+  {
+    "id": 299,
+    "word": "compatible",
+    "display": "compatible",
+    "alt": [
+      "compatible"
+    ],
+    "pos": "adjective",
+    "def": "Able to exist, occur, or work together without conflict."
+  },
+  {
+    "id": 300,
+    "word": "compulsory",
+    "display": "compulsory",
+    "alt": [
+      "compulsory"
+    ],
+    "pos": "adjective",
+    "def": "Required by law or a rule; obligatory and mandatory."
+  },
+  {
+    "id": 301,
+    "word": "corridor",
+    "display": "corridor",
+    "alt": [
+      "corridor"
+    ],
+    "pos": "noun",
+    "def": "A long passage in a building or train from which doors lead into rooms or compartments."
+  },
+  {
+    "id": 302,
+    "word": "Manchester",
+    "display": "Manchester",
+    "alt": [
+      "Manchester"
+    ],
+    "pos": "proper noun",
+    "def": "A major city and metropolitan borough in northwestern England known for its industrial heritage."
+  },
+  {
+    "id": 303,
+    "word": "migraine",
+    "display": "migraine",
+    "alt": [
+      "migraine"
+    ],
+    "pos": "noun",
+    "def": "A recurrent throbbing headache that typically affects one side of the head and is often accompanied by nausea."
+  },
+  {
+    "id": 304,
+    "word": "internally",
+    "display": "internally",
+    "alt": [
+      "internally"
+    ],
+    "pos": "adverb",
+    "def": "On or from the inside of an object, body, or organization."
+  },
+  {
+    "id": 305,
+    "word": "penchant",
+    "display": "penchant",
+    "alt": [
+      "penchant"
+    ],
+    "pos": "noun",
+    "def": "A strong or habitual liking for something or tendency to do something."
+  },
+  {
+    "id": 306,
+    "word": "respective",
+    "display": "respective",
+    "alt": [
+      "respective"
+    ],
+    "pos": "adjective",
+    "def": "Belonging or relating separately to each of two or more people or things previously mentioned."
+  },
+  {
+    "id": 307,
+    "word": "iteration",
+    "display": "iteration",
+    "alt": [
+      "iteration"
+    ],
+    "pos": "noun",
+    "def": "The repetition of a process or utterance, or a new version of a piece of software or design."
+  },
+  {
+    "id": 308,
+    "word": "credentials",
+    "display": "credentials",
+    "alt": [
+      "credentials"
+    ],
+    "pos": "plural noun",
+    "def": "Qualifications, achievements, or documents that attest to a person's identity, background, or competence."
+  },
+  {
+    "id": 309,
+    "word": "incriminate",
+    "display": "incriminate",
+    "alt": [
+      "incriminate"
+    ],
+    "pos": "verb",
+    "def": "To make someone appear guilty of a crime or wrongdoing."
+  },
+  {
+    "id": 310,
+    "word": "recuperate",
+    "display": "recuperate",
+    "alt": [
+      "recuperate"
+    ],
+    "pos": "verb",
+    "def": "To recover from illness, exertion, or financial loss."
+  },
+  {
+    "id": 311,
+    "word": "chronicle",
+    "display": "chronicle",
+    "alt": [
+      "chronicle"
+    ],
+    "pos": "noun",
+    "def": "A factual written account of important or historical events in the order of their occurrence."
+  },
+  {
+    "id": 312,
+    "word": "detonate",
+    "display": "detonate",
+    "alt": [
+      "detonate"
+    ],
+    "pos": "verb",
+    "def": "To explode or cause a bomb or explosive device to explode violently."
+  },
+  {
+    "id": 313,
+    "word": "tureen",
+    "display": "tureen",
+    "alt": [
+      "tureen"
+    ],
+    "pos": "noun",
+    "def": "A deep covered dish from which soup or stew is served at the table."
+  },
+  {
+    "id": 314,
+    "word": "subsidy",
+    "display": "subsidy",
+    "alt": [
+      "subsidy"
+    ],
+    "pos": "noun",
+    "def": "A sum of money granted by the government or a public body to assist an industry or keep prices low."
+  },
+  {
+    "id": 315,
+    "word": "punitive",
+    "display": "punitive",
+    "alt": [
+      "punitive"
+    ],
+    "pos": "adjective",
+    "def": "Inflicting or intended as punishment."
+  },
+  {
+    "id": 316,
+    "word": "drudgery",
+    "display": "drudgery",
+    "alt": [
+      "drudgery"
+    ],
+    "pos": "noun",
+    "def": "Hard, menial, or dull and monotonous work."
+  },
+  {
+    "id": 317,
+    "word": "Venn diagram",
+    "display": "Venn diagram",
+    "alt": [
+      "Venn diagram"
+    ],
+    "pos": "noun",
+    "def": "A mathematical illustration using overlapping circles to show the logical relationships between different sets."
+  },
+  {
+    "id": 318,
+    "word": "lucrative",
+    "display": "lucrative",
+    "alt": [
+      "lucrative"
+    ],
+    "pos": "adjective",
+    "def": "Producing a great deal of financial profit; commercially rewarding."
+  },
+  {
+    "id": 319,
+    "word": "helter-skelter",
+    "display": "helter-skelter",
+    "alt": [
+      "helter-skelter"
+    ],
+    "pos": "adverb",
+    "def": "In disorderly haste or confusion; pell-mell."
+  },
+  {
+    "id": 320,
+    "word": "wherewithal",
+    "display": "wherewithal",
+    "alt": [
+      "wherewithal"
+    ],
+    "pos": "noun",
+    "def": "The money, resources, or means needed for a particular purpose."
+  },
+  {
+    "id": 321,
+    "word": "frivolity",
+    "display": "frivolity",
+    "alt": [
+      "frivolity"
+    ],
+    "pos": "noun",
+    "def": "Lack of seriousness; light-hearted silliness or a trivial pastime."
+  },
+  {
+    "id": 322,
+    "word": "ideogram",
+    "display": "ideogram",
+    "alt": [
+      "ideogram"
+    ],
+    "pos": "noun",
+    "def": "A written character symbolizing the idea of a thing without indicating the sequence of sounds in its name."
+  },
+  {
+    "id": 323,
+    "word": "organza",
+    "display": "organza",
+    "alt": [
+      "organza"
+    ],
+    "pos": "noun",
+    "def": "A thin, stiff, transparent fabric made of silk or synthetic yarn, used for evening wear and curtains."
+  },
+  {
+    "id": 324,
+    "word": "caucus",
+    "display": "caucus",
+    "alt": [
+      "caucus"
+    ],
+    "pos": "noun",
+    "def": "A meeting of the members of a legislative body or political party to select candidates or decide policy."
+  },
+  {
+    "id": 325,
+    "word": "pandemonium",
+    "display": "pandemonium",
+    "alt": [
+      "pandemonium"
+    ],
+    "pos": "noun",
+    "def": "Wild and noisy disorder or uproar; utter chaos."
+  },
+  {
+    "id": 326,
+    "word": "metallurgical",
+    "display": "metallurgical",
+    "alt": [
+      "metallurgical"
+    ],
+    "pos": "adjective",
+    "def": "Relating to the scientific study and industrial extraction, refining, and working of metals."
+  },
+  {
+    "id": 327,
+    "word": "pseudonym",
+    "display": "pseudonym",
+    "alt": [
+      "pseudonym"
+    ],
+    "pos": "noun",
+    "def": "A fictitious name, especially one used by an author; a pen name."
+  },
+  {
+    "id": 328,
+    "word": "dugong",
+    "display": "dugong",
+    "alt": [
+      "dugong"
+    ],
+    "pos": "noun",
+    "def": "A slow-moving herbivorous marine mammal of tropical Indian and Pacific coastal waters, related to the manatee."
+  },
+  {
+    "id": 329,
+    "word": "ectopic",
+    "display": "ectopic",
+    "alt": [
+      "ectopic"
+    ],
+    "pos": "adjective",
+    "def": "Occurring in an abnormal position or place inside the body."
+  },
+  {
+    "id": 330,
+    "word": "heliolatry",
+    "display": "heliolatry",
+    "alt": [
+      "heliolatry"
+    ],
+    "pos": "noun",
+    "def": "The religious worship of the sun."
+  },
+  {
+    "id": 331,
+    "word": "rumbustical",
+    "display": "rumbustical",
+    "alt": [
+      "rumbustical"
+    ],
+    "pos": "adjective",
+    "def": "Boisterous, noisy, and unruly in behavior."
+  },
+  {
+    "id": 332,
+    "word": "ruminant",
+    "display": "ruminant",
+    "alt": [
+      "ruminant"
+    ],
+    "pos": "noun",
+    "def": "An even-toed hoofed mammal, such as a cow, sheep, or deer, that chews the cud regurgitated from its rumen."
+  },
+  {
+    "id": 333,
+    "word": "opossum",
+    "display": "opossum",
+    "alt": [
+      "opossum"
+    ],
+    "pos": "noun",
+    "def": "A nocturnal marsupial native to the Americas that has a prehensile tail and often feigns death when threatened."
+  },
+  {
+    "id": 334,
+    "word": "gondolier",
+    "display": "gondolier",
+    "alt": [
+      "gondolier"
+    ],
+    "pos": "noun",
+    "def": "A person who propels and steers a traditional flat-bottomed Venetian boat with a long pole."
+  },
+  {
+    "id": 335,
+    "word": "squaliform",
+    "display": "squaliform",
+    "alt": [
+      "squaliform"
+    ],
+    "pos": "adjective",
+    "def": "Having the shape or form of a typical shark."
+  },
+  {
+    "id": 336,
+    "word": "crucible",
+    "display": "crucible",
+    "alt": [
+      "crucible"
+    ],
+    "pos": "noun",
+    "def": "A ceramic or metal container in which metals are melted at very high temperatures, or a severe test."
+  },
+  {
+    "id": 337,
+    "word": "envisage",
+    "display": "envisage",
+    "alt": [
+      "envisage"
+    ],
+    "pos": "verb",
+    "def": "To contemplate or conceive of something as a possibility or a desirable future event."
+  },
+  {
+    "id": 338,
+    "word": "evocative",
+    "display": "evocative",
+    "alt": [
+      "evocative"
+    ],
+    "pos": "adjective",
+    "def": "Bringing strong images, memories, or feelings vividly to mind."
+  },
+  {
+    "id": 339,
+    "word": "serviette",
+    "display": "serviette",
+    "alt": [
+      "serviette"
+    ],
+    "pos": "noun",
+    "def": "A table napkin made of cloth or paper used for wiping the mouth and fingers while eating."
+  },
+  {
+    "id": 340,
+    "word": "Herculean",
+    "display": "Herculean",
+    "alt": [
+      "Herculean"
+    ],
+    "pos": "adjective",
+    "def": "Requiring enormous strength, courage, or effort, like the mythical Greek hero."
+  },
+  {
+    "id": 341,
+    "word": "dichotomy",
+    "display": "dichotomy",
+    "alt": [
+      "dichotomy"
+    ],
+    "pos": "noun",
+    "def": "A division or contrast between two things that are or are represented as being opposed or entirely different."
+  },
+  {
+    "id": 342,
+    "word": "incredulous",
+    "display": "incredulous",
+    "alt": [
+      "incredulous"
+    ],
+    "pos": "adjective",
+    "def": "Unwilling or unable to believe something; showing skeptical disbelief."
+  },
+  {
+    "id": 343,
+    "word": "coyote",
+    "display": "coyote",
+    "alt": [
+      "coyote"
+    ],
+    "pos": "noun",
+    "def": "A wolf-like wild canine native to North America, noted for its nightly vocal howls."
+  },
+  {
+    "id": 344,
+    "word": "basilisk",
+    "display": "basilisk",
+    "alt": [
+      "basilisk"
+    ],
+    "pos": "noun",
+    "def": "A legendary reptile reputed to be able to cause death with a single glance, or a crested tropical American lizard."
+  },
+  {
+    "id": 345,
+    "word": "Mandarin",
+    "display": "Mandarin",
+    "alt": [
+      "Mandarin"
+    ],
+    "pos": "proper noun",
+    "def": "The standard literary and official form of the Chinese language, or a high public official in imperial China."
+  },
+  {
+    "id": 346,
+    "word": "quadrupedal",
+    "display": "quadrupedal",
+    "alt": [
+      "quadrupedal"
+    ],
+    "pos": "adjective",
+    "def": "Using four legs or feet for walking and locomotion."
+  },
+  {
+    "id": 347,
+    "word": "poignant",
+    "display": "poignant",
+    "alt": [
+      "poignant"
+    ],
+    "pos": "adjective",
+    "def": "Evoking a keen sense of sadness, regret, or emotional touchingness."
+  },
+  {
+    "id": 348,
+    "word": "helophyte",
+    "display": "helophyte",
+    "alt": [
+      "helophyte"
+    ],
+    "pos": "noun",
+    "def": "A perennial marsh plant that bears its overwintering buds in mud underwater."
+  },
+  {
+    "id": 349,
+    "word": "pluvioscope",
+    "display": "pluvioscope",
+    "alt": [
+      "pluvioscope"
+    ],
+    "pos": "noun",
+    "def": "An instrument designed for indicating or measuring the fall of rain."
+  },
+  {
+    "id": 350,
+    "word": "gelometer",
+    "display": "gelometer",
+    "alt": [
+      "gelometer"
+    ],
+    "pos": "noun",
+    "def": "A laboratory instrument used to measure the firmness, elasticity, or setting time of a jelly or gel."
+  },
+  {
+    "id": 351,
+    "word": "heiferette",
+    "display": "heiferette",
+    "alt": [
+      "heiferette"
+    ],
+    "pos": "noun",
+    "def": "A young female cow that has calved once and is being fattened for beef production."
+  },
+  {
+    "id": 352,
+    "word": "atomism",
+    "display": "atomism",
+    "alt": [
+      "atomism"
+    ],
+    "pos": "noun",
+    "def": "The theoretical doctrine that the physical universe is composed of simple, indivisible minute particles."
+  },
+  {
+    "id": 353,
+    "word": "juridical",
+    "display": "juridical",
+    "alt": [
+      "juridical"
+    ],
+    "pos": "adjective",
+    "def": "Relating to judicial proceedings and the administration of the law."
+  },
+  {
+    "id": 354,
+    "word": "kensington",
+    "display": "kensington",
+    "alt": [
+      "kensington"
+    ],
+    "pos": "noun",
+    "def": "An embroidery stitch combining outline and long-and-short stitches to shade floral patterns."
+  },
+  {
+    "id": 355,
+    "word": "summitry",
+    "display": "summitry",
+    "alt": [
+      "summitry"
+    ],
+    "pos": "noun",
+    "def": "The practice of holding diplomatic conferences between the highest-ranking heads of state."
+  },
+  {
+    "id": 356,
+    "word": "aerodynamicist",
+    "display": "aerodynamicist",
+    "alt": [
+      "aerodynamicist"
+    ],
+    "pos": "noun",
+    "def": "A scientist or engineer who specializes in the study of the motion of air and its interaction with solid bodies in flight."
+  },
+  {
+    "id": 357,
+    "word": "sigmoid",
+    "display": "sigmoid",
+    "alt": [
+      "sigmoid"
+    ],
+    "pos": "adjective",
+    "def": "Curved in two directions like the letter S."
+  },
+  {
+    "id": 358,
+    "word": "cronyism",
+    "display": "cronyism",
+    "alt": [
+      "cronyism"
+    ],
+    "pos": "noun",
+    "def": "The improper appointment of friends and associates to positions of authority without regard to their qualifications."
+  },
+  {
+    "id": 359,
+    "word": "recidivism",
+    "display": "recidivism",
+    "alt": [
+      "recidivism"
+    ],
+    "pos": "noun",
+    "def": "The tendency of a convicted criminal to reoffend or relapse into previous behavior."
+  },
+  {
+    "id": 360,
+    "word": "veronica",
+    "display": "veronica",
+    "alt": [
+      "veronica"
+    ],
+    "pos": "noun",
+    "def": "A flowering herb known as speedwell, or a classic bullfighting pass in which the cape is swung slowly before the bull."
+  },
+  {
+    "id": 361,
+    "word": "acrotrophic",
+    "display": "acrotrophic",
+    "alt": [
+      "acrotrophic"
+    ],
+    "pos": "adjective",
+    "def": "Having nutritive cells located at the apex of the follicular tube in the ovaries of certain insects."
+  },
+  {
+    "id": 362,
+    "word": "carpe diem",
+    "display": "carpe diem",
+    "alt": [
+      "carpe diem"
+    ],
+    "pos": "noun",
+    "def": "The philosophy of making the most of the present moment without undue worry about the future; literally 'seize the day'."
+  },
+  {
+    "id": 363,
+    "word": "botulism",
+    "display": "botulism",
+    "alt": [
+      "botulism"
+    ],
+    "pos": "noun",
+    "def": "A rare and serious paralytic illness caused by a potent nerve toxin produced by certain anaerobic bacteria in improperly preserved food."
+  },
+  {
+    "id": 364,
+    "word": "balustrade",
+    "display": "balustrade",
+    "alt": [
+      "balustrade"
+    ],
+    "pos": "noun",
+    "def": "A railing supported by a row of small posts or upright pillars, especially along a balcony, staircase, or terrace."
+  },
+  {
+    "id": 365,
+    "word": "rottweiler",
+    "display": "rottweiler",
+    "alt": [
+      "rottweiler"
+    ],
+    "pos": "noun",
+    "def": "A tall, muscular breed of dog of German origin having a short black coat with tan markings."
+  },
+  {
+    "id": 366,
+    "word": "violaceous",
+    "display": "violaceous",
+    "alt": [
+      "violaceous"
+    ],
+    "pos": "adjective",
+    "def": "Of a violet or bluish-purple color."
+  },
+  {
+    "id": 367,
+    "word": "aspartame",
+    "display": "aspartame",
+    "alt": [
+      "aspartame"
+    ],
+    "pos": "noun",
+    "def": "A very sweet, low-calorie artificial sweetener synthesized from two amino acids and used in diet foods and beverages."
+  },
+  {
+    "id": 368,
+    "word": "ichorous",
+    "display": "ichorous",
+    "alt": [
+      "ichorous"
+    ],
+    "pos": "adjective",
+    "def": "Resembling or discharging a thin, watery, acrid fluid from a sore or wound."
+  },
+  {
+    "id": 369,
+    "word": "Zanzibar",
+    "display": "Zanzibar",
+    "alt": [
+      "Zanzibar"
+    ],
+    "pos": "proper noun",
+    "def": "A semi-autonomous archipelago off the coast of East Africa that forms part of Tanzania."
+  },
+  {
+    "id": 370,
+    "word": "castaneous",
+    "display": "castaneous",
+    "alt": [
+      "castaneous"
+    ],
+    "pos": "adjective",
+    "def": "Of the reddish-brown color of a chestnut."
+  },
+  {
+    "id": 371,
+    "word": "vindaloo",
+    "display": "vindaloo",
+    "alt": [
+      "vindaloo"
+    ],
+    "pos": "noun",
+    "def": "A highly spiced Indian curry dish originally from Goa, made with meat marinated in vinegar, garlic, and hot chili peppers."
+  },
+  {
+    "id": 372,
+    "word": "mycelium",
+    "display": "mycelium",
+    "alt": [
+      "mycelium"
+    ],
+    "pos": "noun",
+    "def": "The vegetative part of a fungus, consisting of a network of fine white branching filaments."
+  },
+  {
+    "id": 373,
+    "word": "eglantine",
+    "display": "eglantine",
+    "alt": [
+      "eglantine"
+    ],
+    "pos": "noun",
+    "def": "The sweetbrier rose, a Eurasian wild rose having fragrant foliage and pink flowers."
+  },
+  {
+    "id": 374,
+    "word": "turpitude",
+    "display": "turpitude",
+    "alt": [
+      "turpitude"
+    ],
+    "pos": "noun",
+    "def": "Depraved, wicked, or shameful character or behavior."
+  },
+  {
+    "id": 375,
+    "word": "caballero",
+    "display": "caballero",
+    "alt": [
+      "caballero"
+    ],
+    "pos": "noun",
+    "def": "A Spanish gentleman, knight, or horseman."
+  },
+  {
+    "id": 376,
+    "word": "sriracha",
+    "display": "sriracha",
+    "alt": [
+      "sriracha"
+    ],
+    "pos": "noun",
+    "def": "A tangy, spicy hot sauce made from sun-ripened chili peppers, vinegar, garlic, sugar, and salt."
+  },
+  {
+    "id": 377,
+    "word": "obsequy",
+    "display": "obsequy",
+    "alt": [
+      "obsequy"
+    ],
+    "pos": "noun",
+    "def": "A funeral rite or ceremony."
+  },
+  {
+    "id": 378,
+    "word": "maniple",
+    "display": "maniple",
+    "alt": [
+      "maniple"
+    ],
+    "pos": "noun",
+    "def": "A tactical subdivision of an ancient Roman legion, or an embroidered band worn over the left arm by a priest."
+  },
+  {
+    "id": 379,
+    "word": "obtenebrate",
+    "display": "obtenebrate",
+    "alt": [
+      "obtenebrate"
+    ],
+    "pos": "verb",
+    "def": "To darken, overshadow, or cast into shadow."
+  },
+  {
+    "id": 380,
+    "word": "mirin",
+    "display": "mirin",
+    "alt": [
+      "mirin"
+    ],
+    "pos": "noun",
+    "def": "A sweet, low-alcohol Japanese rice wine used exclusively in cooking and sauces."
+  },
+  {
+    "id": 381,
+    "word": "zymurgy",
+    "display": "zymurgy",
+    "alt": [
+      "zymurgy"
+    ],
+    "pos": "noun",
+    "def": "The branch of applied chemistry dealing with fermentation processes, as in brewing and winemaking."
+  },
+  {
+    "id": 382,
+    "word": "decurtate",
+    "display": "decurtate",
+    "alt": [
+      "decurtate"
+    ],
+    "pos": "adjective",
+    "def": "Cut short, abridged, or truncated."
+  },
+  {
+    "id": 383,
+    "word": "genoise",
+    "display": "genoise",
+    "alt": [
+      "genoise"
+    ],
+    "pos": "noun",
+    "def": "A rich Italian and French sponge cake made by beating whole eggs with sugar and folding in melted butter."
+  },
+  {
+    "id": 384,
+    "word": "coruscation",
+    "display": "coruscation",
+    "alt": [
+      "coruscation"
+    ],
+    "pos": "noun",
+    "def": "A sudden flash, sparkle, or gleam of light."
+  },
+  {
+    "id": 385,
+    "word": "catastasis",
+    "display": "catastasis",
+    "alt": [
+      "catastasis"
+    ],
+    "pos": "noun",
+    "def": "The climax or heightened dramatic part of an ancient play just preceding the final catastrophe."
+  },
+  {
+    "id": 386,
+    "word": "chimichanga",
+    "display": "chimichanga",
+    "alt": [
+      "chimichanga"
+    ],
+    "pos": "noun",
+    "def": "A tortilla filled with meat, beans, or cheese that is rolled up and deep-fried."
+  },
+  {
+    "id": 387,
+    "word": "recibiendo",
+    "display": "recibiendo",
+    "alt": [
+      "recibiendo"
+    ],
+    "pos": "adverb",
+    "def": "In bullfighting, by standing stationary to receive the bull's charge on the point of the sword."
+  },
+  {
+    "id": 388,
+    "word": "hauberget",
+    "display": "hauberget",
+    "alt": [
+      "hauberget"
+    ],
+    "pos": "noun",
+    "def": "A light or short medieval tunic made of chain mail."
+  },
+  {
+    "id": 389,
+    "word": "ravigote",
+    "display": "ravigote",
+    "alt": [
+      "ravigote"
+    ],
+    "pos": "noun",
+    "def": "A classic French sauce seasoned with chopped herbs, shallots, capers, and vinegar."
+  },
+  {
+    "id": 390,
+    "word": "fusuma",
+    "display": "fusuma",
+    "alt": [
+      "fusuma"
+    ],
+    "pos": "noun",
+    "def": "A sliding screen or partition in a traditional Japanese room made of a wooden frame covered on both sides with heavy paper."
+  },
+  {
+    "id": 391,
+    "word": "mignonette",
+    "display": "mignonette",
+    "alt": [
+      "mignonette"
+    ],
+    "pos": "noun",
+    "def": "A sauce of cracked black pepper, shallots, and vinegar served with raw oysters; or a fragrant garden plant."
+  },
+  {
+    "id": 392,
+    "word": "redondilla",
+    "display": "redondilla",
+    "alt": [
+      "redondilla"
+    ],
+    "pos": "noun",
+    "def": "A Spanish poetic stanza consisting of four octosyllabic lines usually rhyming A-B-B-A."
+  },
+  {
+    "id": 393,
+    "word": "Tallahassee",
+    "display": "Tallahassee",
+    "alt": [
+      "Tallahassee"
+    ],
+    "pos": "proper noun",
+    "def": "The capital city of the U.S. state of Florida, located in the Florida Panhandle."
+  },
+  {
+    "id": 394,
+    "word": "cipollini",
+    "display": "cipollini",
+    "alt": [
+      "cipollini"
+    ],
+    "pos": "plural noun",
+    "def": "Small, flat, saucer-shaped onions prized for their sweet, mild flavor when roasted."
+  },
+  {
+    "id": 395,
+    "word": "caterwaul",
+    "display": "caterwaul",
+    "alt": [
+      "caterwaul"
+    ],
+    "pos": "verb",
+    "def": "To make a shrill, howling, or wailing cry like that of a cat."
+  },
+  {
+    "id": 396,
+    "word": "remicle",
+    "display": "remicle",
+    "alt": [
+      "remicle"
+    ],
+    "pos": "noun",
+    "def": "The small, outermost primary feather on a bird's wing."
+  },
+  {
+    "id": 397,
+    "word": "fasciitis",
+    "display": "fasciitis",
+    "alt": [
+      "fasciitis"
+    ],
+    "pos": "noun",
+    "def": "Inflammation of the fibrous tissue layer that encloses muscles or organs, especially in the sole of the foot."
+  },
+  {
+    "id": 398,
+    "word": "reblochon",
+    "display": "reblochon",
+    "alt": [
+      "reblochon"
+    ],
+    "pos": "noun",
+    "def": "A soft, creamy French alpine cheese made from raw cow's milk with a washed orange rind."
+  },
+  {
+    "id": 399,
+    "word": "rachiodont",
+    "display": "rachiodont",
+    "alt": [
+      "rachiodont"
+    ],
+    "pos": "adjective",
+    "def": "Having tooth-like projections on the neck vertebrae that extend into the esophagus for crushing eggshells, as in certain snakes."
+  },
+  {
+    "id": 400,
+    "word": "Borinqueño",
+    "display": "Borinqueño",
+    "alt": [
+      "Borinqueño"
+    ],
+    "pos": "noun",
+    "def": "A native or inhabitant of Puerto Rico."
+  }
+];
+
+    // Application State
+    const MAX_TRIES = 3;
+    let currentWord = null;
+    let attemptsUsed = 0;
+    let attemptHistory = [];
+    let roundFinished = false;
+    let autoNextTimer = null;
+
+    // Session Stats
+    let stats = {
+      practiced: 0,
+      correct: 0,
+      streak: 0,
+      missedIds: new Set(),
+      recentIds: []
+    };
+
+    // DOM Elements
+    const showListBtn = document.getElementById('showListBtn');
+    const closeListBtn = document.getElementById('closeListBtn');
+    const resetStatsBtn = document.getElementById('resetStatsBtn');
+    const wordListPanel = document.getElementById('wordListPanel');
+    const wordListTbody = document.getElementById('wordListTbody');
+    const listSearchInput = document.getElementById('listSearchInput');
+    const listCountLabel = document.getElementById('listCountLabel');
+    const blurWordsToggle = document.getElementById('blurWordsToggle');
+    const wordTableWrap = document.getElementById('wordTableWrap');
+
+    const rangeSelect = document.getElementById('rangeSelect');
+    const voiceSelect = document.getElementById('voiceSelect');
+    const rateSelect = document.getElementById('rateSelect');
+
+    const wordNumBadge = document.getElementById('wordNumBadge');
+    const wordPosBadge = document.getElementById('wordPosBadge');
+    const wordSpecialBadge = document.getElementById('wordSpecialBadge');
+    const triesText = document.getElementById('triesText');
+    const tryDots = document.getElementById('tryDots');
+    const wordDefinition = document.getElementById('wordDefinition');
+    const hintBox = document.getElementById('hintBox');
+
+    const speakBothBtn = document.getElementById('speakBothBtn');
+    const speakWordBtn = document.getElementById('speakWordBtn');
+    const speakSlowBtn = document.getElementById('speakSlowBtn');
+    const speakDefBtn = document.getElementById('speakDefBtn');
+
+    const spellingForm = document.getElementById('spellingForm');
+    const spellingInput = document.getElementById('spellingInput');
+    const submitBtn = document.getElementById('submitBtn');
+    const nextWordBtn = document.getElementById('nextWordBtn');
+    const hintBtn = document.getElementById('hintBtn');
+    const giveUpBtn = document.getElementById('giveUpBtn');
+    const skipWordBtn = document.getElementById('skipWordBtn');
+
+    const feedbackBanner = document.getElementById('feedbackBanner');
+    const feedbackTitle = document.getElementById('feedbackTitle');
+    const feedbackActions = document.getElementById('feedbackActions');
+    const feedbackBody = document.getElementById('feedbackBody');
+
+    const statPracticed = document.getElementById('statPracticed');
+    const statCorrect = document.getElementById('statCorrect');
+    const statStreak = document.getElementById('statStreak');
+    const statAccuracy = document.getElementById('statAccuracy');
+
+    // Speech Synthesis Setup (Standard American English en-US)
+    let usVoices = [];
+    let selectedVoice = null;
+
+    function loadVoices() {
+      if (!('speechSynthesis' in window)) return;
+      const allVoices = window.speechSynthesis.getVoices() || [];
+      // Filter for American English voices (en-US or en_US)
+      usVoices = allVoices.filter(v =>
+        /^en[-_]US/i.test(v.lang) ||
+        (v.lang.toLowerCase().startsWith('en') && /us|united states|samantha|ava|alex|allison|aria|jenny|guy|christopher|google us/i.test(v.name))
+      );
+
+      // Sort voices to prioritize high-quality natural American English voices
+      const preferredOrder = ['Samantha', 'Ava', 'Alex', 'Google US English', 'Microsoft Aria', 'Microsoft Jenny', 'Allison', 'Aaron', 'Nicky'];
+      usVoices.sort((a, b) => {
+        const idxA = preferredOrder.findIndex(p => a.name.includes(p));
+        const idxB = preferredOrder.findIndex(p => b.name.includes(p));
+        const scoreA = idxA === -1 ? 99 : idxA;
+        const scoreB = idxB === -1 ? 99 : idxB;
+        return scoreA - scoreB;
+      });
+
+      const currentVal = voiceSelect.value;
+      voiceSelect.innerHTML = '';
+
+      if (usVoices.length === 0) {
+        const opt = document.createElement('option');
+        opt.value = '';
+        opt.textContent = 'Standard American English (en-US)';
+        voiceSelect.appendChild(opt);
+        selectedVoice = null;
+        return;
+      }
+
+      usVoices.forEach((v, idx) => {
+        const opt = document.createElement('option');
+        opt.value = v.name;
+        opt.textContent = `${v.name} (${v.lang})`;
+        voiceSelect.appendChild(opt);
+        if (idx === 0 && !currentVal) {
+          selectedVoice = v;
+        } else if (v.name === currentVal) {
+          selectedVoice = v;
+          opt.selected = true;
+        }
+      });
+
+      if (!selectedVoice && usVoices.length > 0) {
+        selectedVoice = usVoices[0];
+      }
+    }
+
+    if ('speechSynthesis' in window) {
+      loadVoices();
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+
+    voiceSelect.addEventListener('change', () => {
+      const found = usVoices.find(v => v.name === voiceSelect.value);
+      if (found) selectedVoice = found;
+    });
+
+    function createUtterance(text, rateOverride) {
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'en-US';
+      if (selectedVoice) {
+        utter.voice = selectedVoice;
+      }
+      utter.rate = rateOverride || parseFloat(rateSelect.value) || 0.95;
+      utter.pitch = 1.0;
+      return utter;
+    }
+
+    function stopSpeech() {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      speakBothBtn.classList.remove('speaking-pulse');
+    }
+
+    function speakWordAndDefinition(wordObj) {
+      if (!('speechSynthesis' in window) || !wordObj) return;
+      stopSpeech();
+      speakBothBtn.classList.add('speaking-pulse');
+
+      const baseRate = parseFloat(rateSelect.value) || 0.95;
+      const wordUtter = createUtterance(wordObj.word, Math.min(baseRate, 0.92));
+      const defUtter = createUtterance(`${wordObj.pos}. ${wordObj.def}`, baseRate);
+
+      defUtter.onend = () => {
+        speakBothBtn.classList.remove('speaking-pulse');
+      };
+      defUtter.onerror = () => {
+        speakBothBtn.classList.remove('speaking-pulse');
+      };
+
+      window.speechSynthesis.speak(wordUtter);
+      window.speechSynthesis.speak(defUtter);
+    }
+
+    function speakText(text, rateOverride) {
+      if (!('speechSynthesis' in window)) return;
+      stopSpeech();
+      const utter = createUtterance(text, rateOverride);
+      window.speechSynthesis.speak(utter);
+    }
+
+    // Word Pool Filtering
+    function getFilteredPool() {
+      const mode = rangeSelect.value;
+      if (mode === '1-100') return WORD_LIST.filter(w => w.id >= 1 && w.id <= 100);
+      if (mode === '101-200') return WORD_LIST.filter(w => w.id >= 101 && w.id <= 200);
+      if (mode === '201-300') return WORD_LIST.filter(w => w.id >= 201 && w.id <= 300);
+      if (mode === '301-400') return WORD_LIST.filter(w => w.id >= 301 && w.id <= 400);
+      if (mode === 'missed') {
+        const missedPool = WORD_LIST.filter(w => stats.missedIds.has(w.id));
+        return missedPool.length > 0 ? missedPool : WORD_LIST;
+      }
+      return WORD_LIST;
+    }
+
+    function updateMissedOptionLabel() {
+      const missedOpt = rangeSelect.querySelector('option[value="missed"]');
+      if (missedOpt) {
+        missedOpt.textContent = `Missed Words Only (${stats.missedIds.size})`;
+      }
+    }
+
+    // Pick a Random Word from the Pool
+    function pickRandomWord(specificWordObj = null, autoSpeak = true) {
+      if (autoNextTimer) {
+        clearTimeout(autoNextTimer);
+        autoNextTimer = null;
+      }
+
+      if (specificWordObj) {
+        currentWord = specificWordObj;
+      } else {
+        const pool = getFilteredPool();
+        let candidates = pool.filter(w => !stats.recentIds.includes(w.id));
+        if (candidates.length === 0) {
+          candidates = pool;
+        }
+        const randIdx = Math.floor(Math.random() * candidates.length);
+        currentWord = candidates[randIdx];
+      }
+
+      // Track recent words to avoid repeats
+      stats.recentIds.push(currentWord.id);
+      if (stats.recentIds.length > Math.min(25, WORD_LIST.length - 1)) {
+        stats.recentIds.shift();
+      }
+
+      // Reset Round State
+      attemptsUsed = 0;
+      attemptHistory = [];
+      roundFinished = false;
+
+      // Update Card UI
+      wordNumBadge.textContent = `Word #${currentWord.id} of 400`;
+      wordPosBadge.textContent = currentWord.pos;
+      wordDefinition.textContent = currentWord.def;
+
+      // Show special badge if word contains space, hyphen, alternate spelling, or ñ
+      const notes = [];
+      if (currentWord.word.includes(' ')) notes.push('Contains a space (2 words)');
+      if (currentWord.word.includes('-')) notes.push('Contains a hyphen (-)');
+      if (currentWord.word.includes('ñ')) notes.push('Contains ñ (n also accepted)');
+      if (currentWord.alt.length > 1) notes.push('2 accepted spellings');
+
+      if (notes.length > 0) {
+        wordSpecialBadge.textContent = notes.join(' • ');
+        wordSpecialBadge.style.display = 'inline-block';
+      } else {
+        wordSpecialBadge.style.display = 'none';
+      }
+
+      updateTriesUI();
+      hintBox.style.display = 'none';
+      hintBox.textContent = '';
+
+      feedbackBanner.className = 'feedback-banner';
+      feedbackTitle.innerHTML = '';
+      feedbackActions.innerHTML = '';
+      feedbackBody.innerHTML = '';
+
+      spellingInput.disabled = false;
+      spellingInput.value = '';
+      submitBtn.style.display = 'inline-flex';
+      nextWordBtn.style.display = 'none';
+      giveUpBtn.disabled = false;
+      hintBtn.disabled = false;
+
+      spellingInput.focus();
+
+      if (autoSpeak) {
+        speakWordAndDefinition(currentWord);
+      }
+    }
+
+    function updateTriesUI() {
+      const remaining = Math.max(0, MAX_TRIES - attemptsUsed);
+      triesText.textContent = remaining === 1 ? '1 try remaining' : `${remaining} tries remaining`;
+      const dots = tryDots.querySelectorAll('.try-dot');
+      dots.forEach((dot, idx) => {
+        if (idx < attemptsUsed) {
+          dot.classList.add('used');
+        } else {
+          dot.classList.remove('used');
+        }
+      });
+    }
+
+    function updateStatsUI() {
+      statPracticed.textContent = stats.practiced;
+      statCorrect.textContent = stats.correct;
+      statStreak.textContent = `${stats.streak} 🔥`;
+      if (stats.practiced > 0) {
+        const pct = Math.round((stats.correct / stats.practiced) * 100);
+        statAccuracy.textContent = `${pct}%`;
+      } else {
+        statAccuracy.textContent = '—';
+      }
+      updateMissedOptionLabel();
+    }
+
+    // Normalize input for checking spelling
+    function normalizeForComparison(str, forgiveDiacritics = false) {
+      let s = str.trim().replace(/\s+/g, ' ').toLowerCase();
+      if (forgiveDiacritics) {
+        s = s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      }
+      return s;
+    }
+
+    function isSpellingCorrect(userRaw, wordObj) {
+      const cleanedUser = normalizeForComparison(userRaw, false);
+      const cleanedUserForgiving = normalizeForComparison(userRaw, true);
+
+      for (const variant of wordObj.alt) {
+        if (normalizeForComparison(variant, false) === cleanedUser) {
+          return true;
+        }
+        if (normalizeForComparison(variant, true) === cleanedUserForgiving) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // Check User's Typed Spelling
+    function handleCheckSpelling() {
+      if (roundFinished) {
+        pickRandomWord(null, true);
+        return;
+      }
+
+      const typed = spellingInput.value.trim();
+      if (!typed) {
+        spellingInput.focus();
+        return;
+      }
+
+      if (isSpellingCorrect(typed, currentWord)) {
+        handleCorrectAnswer(typed);
+      } else {
+        attemptsUsed += 1;
+        attemptHistory.push(typed);
+        updateTriesUI();
+
+        if (attemptsUsed < MAX_TRIES) {
+          handleRetryPrompt(typed);
+        } else {
+          handleRevealAnswer(false);
+        }
+      }
+    }
+
+    function handleCorrectAnswer(typed) {
+      roundFinished = true;
+      stats.practiced += 1;
+      stats.correct += 1;
+      stats.streak += 1;
+      stats.missedIds.delete(currentWord.id);
+      updateStatsUI();
+
+      spellingInput.disabled = true;
+      submitBtn.style.display = 'none';
+      nextWordBtn.style.display = 'inline-flex';
+      giveUpBtn.disabled = true;
+      hintBtn.disabled = true;
+
+      feedbackBanner.className = 'feedback-banner correct';
+      feedbackTitle.innerHTML = `🎉 Correct! Well spelled: <span style="text-decoration:underline;">${escapeHtml(currentWord.display)}</span>`;
+      feedbackActions.innerHTML = `
+        <button type="button" class="btn btn-success btn-sm" id="bannerNextBtn">
+          Next Word Now →
+        </button>
+      `;
+      const triesMsg = attemptsUsed === 0
+        ? 'Spelled correctly on your 1st try!'
+        : `Spelled correctly on try #${attemptsUsed + 1}!`;
+      feedbackBody.innerHTML = `<div style="font-size:0.9rem;">${triesMsg} Moving to the next random word automatically...</div>`;
+
+      document.getElementById('bannerNextBtn').addEventListener('click', () => {
+        pickRandomWord(null, true);
+      });
+
+      speakText(`Correct! ${currentWord.word}.`);
+
+      autoNextTimer = setTimeout(() => {
+        if (roundFinished) {
+          pickRandomWord(null, true);
+        }
+      }, 2100);
+    }
+
+    function handleRetryPrompt(lastTyped) {
+      const remaining = MAX_TRIES - attemptsUsed;
+      feedbackBanner.className = 'feedback-banner retry';
+      feedbackTitle.innerHTML = `❌ Not quite! You typed "<code>${escapeHtml(lastTyped)}</code>".`;
+      feedbackActions.innerHTML = `
+        <button type="button" class="btn btn-secondary btn-sm" id="bannerGiveUpBtn">
+          👁️ Show Correct Answer
+        </button>
+      `;
+
+      // Provide a gentle clue on retry
+      const firstChar = currentWord.word.charAt(0);
+      const len = currentWord.word.length;
+      feedbackBody.innerHTML = `
+        <div>
+          You have <strong>${remaining} ${remaining === 1 ? 'retry' : 'retries'} remaining</strong> (maximum 3 tries).
+          Listen carefully and try again, or click <em>Show Correct Answer</em>.
+        </div>
+        <div style="font-size: 0.85rem; margin-top: 4px;">
+          💡 Clue: Starts with <strong>"${escapeHtml(firstChar)}"</strong> and has <strong>${len}</strong> characters.
+        </div>
+      `;
+
+      document.getElementById('bannerGiveUpBtn').addEventListener('click', () => {
+        handleRevealAnswer(true);
+      });
+
+      // Re-pronounce the word in Standard American English to help the user
+      speakText(currentWord.word, 0.85);
+
+      spellingInput.focus();
+      spellingInput.select();
+    }
+
+    function handleRevealAnswer(gaveUpEarly) {
+      roundFinished = true;
+      stats.practiced += 1;
+      stats.streak = 0;
+      stats.missedIds.add(currentWord.id);
+      updateStatsUI();
+
+      spellingInput.disabled = true;
+      submitBtn.style.display = 'none';
+      nextWordBtn.style.display = 'inline-flex';
+      giveUpBtn.disabled = true;
+      hintBtn.disabled = true;
+
+      feedbackBanner.className = 'feedback-banner failed';
+      const headerReason = gaveUpEarly
+        ? '👁️ Answer Revealed'
+        : `❌ Out of tries (3 of 3 attempts used)`;
+      feedbackTitle.innerHTML = headerReason;
+      feedbackActions.innerHTML = `
+        <button type="button" class="btn btn-primary btn-sm" id="bannerNextAfterFailBtn">
+          ⏭️ Next Word →
+        </button>
+      `;
+
+      const historyHtml = attemptHistory.length > 0
+        ? `<div class="attempt-history">Your ${attemptHistory.length === 1 ? 'attempt' : 'attempts'}: ${attemptHistory.map(a => `<code>${escapeHtml(a)}</code>`).join(', ')}</div>`
+        : '';
+
+      feedbackBody.innerHTML = `
+        <div class="answer-reveal-box">
+          <span style="font-size:0.78rem; font-weight:700; text-transform:uppercase; color:#64748b;">Correct Spelling:</span>
+          <div class="correct-word-letters">${escapeHtml(currentWord.display)}</div>
+          ${historyHtml}
+        </div>
+      `;
+
+      document.getElementById('bannerNextAfterFailBtn').addEventListener('click', () => {
+        pickRandomWord(null, true);
+      });
+
+      // Speak the word and spell it out
+      const spelledOut = currentWord.word.split('').map(ch => ch === ' ' ? 'space' : (ch === '-' ? 'hyphen' : ch)).join(' ');
+      speakText(`The correct spelling of ${currentWord.word} is: ${spelledOut}.`, 0.9);
+      nextWordBtn.focus();
+    }
+
+    // Hint Handler
+    hintBtn.addEventListener('click', () => {
+      if (!currentWord || roundFinished) return;
+      const w = currentWord.word;
+      const masked = w
+        .split('')
+        .map((ch, i) => {
+          if (i === 0 || i === w.length - 1 || ch === ' ' || ch === '-') return ch;
+          return '_';
+        })
+        .join(' ');
+      hintBox.style.display = 'block';
+      hintBox.textContent = `💡 Hint: ${w.length} characters • Pattern: ${masked}`;
+      spellingInput.focus();
+    });
+
+    // Give Up / Show Correct Answer Button
+    giveUpBtn.addEventListener('click', () => {
+      if (!currentWord || roundFinished) return;
+      handleRevealAnswer(true);
+    });
+
+    // Skip / Another Random Word Button
+    skipWordBtn.addEventListener('click', () => {
+      pickRandomWord(null, true);
+    });
+
+    nextWordBtn.addEventListener('click', () => {
+      pickRandomWord(null, true);
+    });
+
+    // Form submission
+    spellingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      handleCheckSpelling();
+    });
+
+    // Allow pressing Enter when round is finished to advance to next word
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && roundFinished && document.activeElement !== listSearchInput) {
+        e.preventDefault();
+        pickRandomWord(null, true);
+      }
+    });
+
+    // Special Character Buttons
+    document.querySelectorAll('.char-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (spellingInput.disabled) return;
+        const ch = btn.getAttribute('data-char');
+        const start = spellingInput.selectionStart || spellingInput.value.length;
+        const end = spellingInput.selectionEnd || spellingInput.value.length;
+        const val = spellingInput.value;
+        spellingInput.value = val.slice(0, start) + ch + val.slice(end);
+        spellingInput.focus();
+        spellingInput.setSelectionRange(start + ch.length, start + ch.length);
+      });
+    });
+
+    // Audio Buttons
+    speakBothBtn.addEventListener('click', () => {
+      speakWordAndDefinition(currentWord);
+      if (!roundFinished) spellingInput.focus();
+    });
+
+    speakWordBtn.addEventListener('click', () => {
+      if (!currentWord) return;
+      speakText(currentWord.word);
+      if (!roundFinished) spellingInput.focus();
+    });
+
+    speakSlowBtn.addEventListener('click', () => {
+      if (!currentWord) return;
+      speakText(currentWord.word, 0.6);
+      if (!roundFinished) spellingInput.focus();
+    });
+
+    speakDefBtn.addEventListener('click', () => {
+      if (!currentWord) return;
+      speakText(`${currentWord.pos}. ${currentWord.def}`);
+      if (!roundFinished) spellingInput.focus();
+    });
+
+    // Range Change
+    rangeSelect.addEventListener('change', () => {
+      pickRandomWord(null, true);
+    });
+
+    // Reset Stats
+    resetStatsBtn.addEventListener('click', () => {
+      stats.practiced = 0;
+      stats.correct = 0;
+      stats.streak = 0;
+      stats.missedIds.clear();
+      updateStatsUI();
+      spellingInput.focus();
+    });
+
+    // Show / Hide Complete Word List (400 Words)
+    function toggleWordList(forceState) {
+      const isOpen = typeof forceState === 'boolean'
+        ? forceState
+        : !wordListPanel.classList.contains('open');
+
+      if (isOpen) {
+        wordListPanel.classList.add('open');
+        showListBtn.textContent = '📋 Hide List (400 Words)';
+        renderWordList(listSearchInput.value);
+        wordListPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        wordListPanel.classList.remove('open');
+        showListBtn.textContent = '📋 Show List (400 Words)';
+      }
+    }
+
+    showListBtn.addEventListener('click', () => toggleWordList());
+    closeListBtn.addEventListener('click', () => toggleWordList(false));
+
+    blurWordsToggle.addEventListener('change', () => {
+      if (blurWordsToggle.checked) {
+        wordTableWrap.classList.add('hide-spellings');
+      } else {
+        wordTableWrap.classList.remove('hide-spellings');
+      }
+    });
+
+    function renderWordList(query = '') {
+      const q = query.trim().toLowerCase();
+      const filtered = WORD_LIST.filter(item => {
+        if (!q) return true;
+        return (
+          String(item.id) === q ||
+          `#${item.id}` === q ||
+          item.display.toLowerCase().includes(q) ||
+          item.pos.toLowerCase().includes(q) ||
+          item.def.toLowerCase().includes(q)
+        );
+      });
+
+      listCountLabel.textContent = `Showing ${filtered.length} of ${WORD_LIST.length} words`;
+
+      const rowsHtml = filtered.map(item => `
+        <tr>
+          <td class="td-num">#${item.id}</td>
+          <td class="td-word"><span class="td-word-text">${escapeHtml(item.display)}</span></td>
+          <td class="td-pos"><span class="badge badge-pos">${escapeHtml(item.pos)}</span></td>
+          <td>${escapeHtml(item.def)}</td>
+          <td class="td-actions">
+            <button type="button" class="btn btn-honey btn-sm" data-action="speak" data-id="${item.id}" title="Pronounce word & definition">
+              🔊 Speak
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" data-action="practice" data-id="${item.id}" title="Practice spelling this word">
+              🎯 Practice
+            </button>
+          </td>
+        </tr>
+      `).join('');
+
+      wordListTbody.innerHTML = rowsHtml;
+    }
+
+    listSearchInput.addEventListener('input', () => {
+      renderWordList(listSearchInput.value);
+    });
+
+    wordListTbody.addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-action]');
+      if (!btn) return;
+      const id = parseInt(btn.getAttribute('data-id'), 10);
+      const action = btn.getAttribute('data-action');
+      const wordObj = WORD_LIST.find(w => w.id === id);
+      if (!wordObj) return;
+
+      if (action === 'speak') {
+        speakWordAndDefinition(wordObj);
+      } else if (action === 'practice') {
+        pickRandomWord(wordObj, true);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    // Initialize Application on Load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderWordList('');
+      pickRandomWord(null, true);
+    });
+  </script>
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</body>
+</html>
