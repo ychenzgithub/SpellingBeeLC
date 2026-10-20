@@ -1,5 +1,7 @@
 # 2027 Spelling Bee Practice (`SpellingBeeLC`)
 
+**Live Webpage:** [https://ychenzgithub.github.io/SpellingBeeLC/](https://ychenzgithub.github.io/SpellingBeeLC/)
+
 Interactive standalone web application for practicing the **2027 School Competition List (400 Words)** in Standard American English (`en-US`).
 
 ## Features
